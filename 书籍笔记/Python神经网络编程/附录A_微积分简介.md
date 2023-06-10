@@ -14,7 +14,7 @@
 
 每分钟测量一次汽车的速度，并作出如下图表
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528194721411.png" alt="image-20230528194721411" style="zoom:33%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528194721411.png" alt="image-20230528194721411" style="zoom:33%;" />
 
 根据测算结果得出结论：该汽车速度不随时间而改变，相关性为0
 
@@ -42,7 +42,7 @@
 
 每分钟测量一次速度，图表如下
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528200138252.png" alt="image-20230528200138252" style="zoom:33%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528200138252.png" alt="image-20230528200138252" style="zoom:33%;" />
 
 可以得出速度表达式：
 
@@ -60,7 +60,7 @@ s = 30 + 10t
 
 直接上图
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528200700740.png" alt="image-20230528200700740" style="zoom: 25%;" /><img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528200636647.png" alt="image-20230528200636647" style="zoom: 25%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528200700740.png" alt="image-20230528200700740" style="zoom: 25%;" /><img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528200636647.png" alt="image-20230528200636647" style="zoom: 25%;" />
 
 汽车的速度为时间（分钟）的平方，因此速度表达式为
 
@@ -76,7 +76,7 @@ s = t²
 
 
 
-![image-20230528201353842](https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528201353842.png)
+![image-20230528201353842](https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528201353842.png)
 
 可以看到，在6分钟出的斜率比在3分钟处的斜率要大。
 
@@ -86,7 +86,7 @@ s = t²
 >
 > 在其它测量方法出现之前，这就是人们测量曲线斜率的方式。
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528211233063.png" alt="image-20230528211233063" style="zoom:33%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528211233063.png" alt="image-20230528211233063" style="zoom:33%;" />
 
 在6分钟时，我们得到了与速度曲线仅有一个交点的切线。
 
@@ -98,7 +98,7 @@ s = t²
 
 ### A.5 非手绘微积分
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528212926777.png" alt="image-20230528212926777" style="zoom:33%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528212926777.png" alt="image-20230528212926777" style="zoom:33%;" />
 
 > 这幅图中有一条新的标记直线。
 >
@@ -131,7 +131,7 @@ s = t²
 
 
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528213323588.png" alt="image-20230528213323588" style="zoom:33%;" />如果将Δx**变小**，得到的斜线斜率则将更加接近目标斜率
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528213323588.png" alt="image-20230528213323588" style="zoom:33%;" />如果将Δx**变小**，得到的斜线斜率则将更加接近目标斜率
 
 
 
@@ -149,11 +149,11 @@ s = t²
 
 **宽度 = 2Δx**
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528220034396.png" alt="image-20230528220034396" style="zoom:50%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528220034396.png" alt="image-20230528220034396" style="zoom:50%;" />
 
 如果速度表达式为 **s = t2 + 2t**
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230528220552101.png" alt="image-20230528220552101" style="zoom: 25%;" />相同的算法，最终得出 **变化率为 2t + 2**
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230528220552101.png" alt="image-20230528220552101" style="zoom: 25%;" />相同的算法，最终得出 **变化率为 2t + 2**
 
 
 
@@ -178,7 +178,7 @@ s = t²
 
 ### A.7 模式
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230529143531118.png" alt="image-20230529143531118" style="zoom:33%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230529143531118.png" alt="image-20230529143531118" style="zoom:33%;" />
 
 #### t函数的导数规律
 
@@ -188,7 +188,7 @@ s = t²
 - 由于常数都没有变化率，所有常数就简单地**消失**了，*这就是称他们为常量的原因。*
 - 在幂指数减小之前，幂指数被用作了乘数。
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230529143832571.png" alt="image-20230529143832571" style="zoom:33%;" />通过以上幂规则，能得如图的公式
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230529143832571.png" alt="image-20230529143832571" style="zoom:33%;" />通过以上幂规则，能得如图的公式
 
 > 这条规则允许进行大量的微分计算，对于大多数用途而言，这就是我们所需的微分。
 >
@@ -222,7 +222,7 @@ f = y² = (x³ + x)²
 
 但可以使用此前逐渐减小Δ的方式，得以解出其表达式，其模式为
 
-<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets\image-20230529150630800.png" alt="image-20230529150630800" style="zoom:50%;" />
+<img src="https://gitee.com/u1iz/notes/raw/master/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/Python%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%99%84%E5%BD%95A_%E5%BE%AE%E7%A7%AF%E5%88%86%E7%AE%80%E4%BB%8B.assets/image-20230529150630800.png" alt="image-20230529150630800" style="zoom:50%;" />
 
 这个模式被称为 **链式法则**
 
