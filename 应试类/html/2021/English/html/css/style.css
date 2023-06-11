@@ -1,0 +1,298 @@
+@import url(selection.css);
+* {
+    -webkit-tap-highlight-color: transparent;
+    cursor: default;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 50px;
+}
+
+body {
+    background-color: #eee;
+    height: 100rem;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px
+}
+
+
+/*定义滚动条轨道*/
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    background-color: #0093ff;
+    background-image: -webkit-linear-gradient(45deg, rgb(215, 130, 130), rgb(130, 174, 215));
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em
+}
+
+ul {
+    transform-style: preserve-3d;
+    perspective: 6rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    white-space: nowrap;
+}
+
+a {
+    cursor: pointer;
+    position: absolute;
+    white-space: nowrap;
+    text-decoration: none;
+    writing-mode: tb;
+    padding: 0.46em 0.24em;
+    border-radius: 16px;
+    color: #666;
+    box-shadow: 0px 0px 0px 0px transparent;
+    background-color: rgba(130, 184, 215, 0.96);
+    left: calc(100% + 2.4rem);
+    /* 
+    writing-mode:lr-tb或writing-mode:tb-rl
+
+    lr-tb：从左向右，从上往下
+    tb-rl：从上往下，从右向左
+    */
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #444;
+    background-color: rgba(91, 161, 202, 0.96);
+    letter-spacing: 0.3rem;
+    box-shadow: 1px 1px 12px 1px #777;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    text-indent: 0.2rem;
+}
+
+h4,
+h3,
+h2 {
+    transition: all 0.3s;
+}
+
+h4:hover,
+h3:hover,
+h2:hover {
+    text-indent: 2rem;
+    z-index: 3;
+}
+
+h1 {
+    text-align: center;
+    font: 800 1.6rem "Microsoft YaHei";
+}
+
+h2 {
+    color: rgb(220, 20, 20);
+    font: 800 1.2rem "Microsoft YaHei";
+}
+
+h2,
+h3 {
+    font: medium 1rem "Microsoft YaHei";
+    margin-bottom: 0.2rem;
+}
+
+h3 {
+    color: rgb(0, 108, 231);
+}
+
+h4 {
+    color: rgb(22, 145, 124);
+}
+
+h5 {
+    font: 100 0.6rem "Microsoft YaHei";
+}
+
+h6 {
+    box-sizing: border-box;
+    padding-left: 10%;
+    border-top: 0.2rem rgba(0, 0, 0, 0.42);
+    font: 800 1rem "microsoft YaHei";
+    color: tomato;
+    background-color: #fff;
+}
+
+strong {
+    font: 800 1.16rem "Microsoft YaHei";
+    color: rgb(5, 161, 252);
+    background-color: rgb(244, 248, 0);
+}
+
+i {
+    color: rgb(1, 1, 1);
+    margin-left: 4rem;
+}
+
+div {
+    display: block;
+}
+
+/* simple form 专用 */
+/* //////////////////// */
+li.a_sf {
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    transition: all 0.3s;
+    border-bottom: 0.04rem solid rgb(0, 0, 0);
+}
+
+li.a_sf::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0.1rem;
+    background-color: rgb(105, 214, 233);
+    transition: all 0.36s;
+}
+
+div.sf {
+    position: relative;
+    border-bottom: 0.04rem solid rgb(0, 0, 0);
+}
+
+li.a_sf:hover::after {
+    width: 80%;
+}
+
+li.a_sf:hover {
+    letter-spacing: 0.32rem;
+    text-indent: 1rem;
+    transform: translateZ(0.24rem);
+}
+
+i.uf,
+i.sf,
+i.im,
+i.c,
+i.cu,
+i.ci {
+    font-size: 0.54rem;
+    line-height: 1rem;
+    position: absolute;
+}
+
+u {
+    text-decoration: none;
+}
+
+u.sf,
+u.im,
+u.uf {
+    position: relative;
+}
+
+i.im {
+    font-weight: bold;
+    left: 12.6rem;
+    color: rgb(230, 65, 36);
+}
+
+i.uf,
+i.sf {
+    left: 12.6rem !important;
+}
+
+i.cu,
+i.ci,
+i.c {
+    left: 6.4rem;
+
+}
+
+i.c {
+    color: #5900ff;
+}
+
+i.cu {
+    color: #0093ff;
+}
+
+i.ci {
+    font-weight: bold;
+    color: coral;
+}
+
+u.sf,
+u.im,
+u.uf {
+    left: 1rem;
+}
+
+u.sf {
+    color: rgb(1, 1, 1);
+}
+
+u.im {
+    font-weight: bold;
+    color: rgb(223, 12, 12);
+}
+
+i.uf,
+u.uf {
+    color: #0093ff;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+i.s,
+i.u,
+i.i {
+    position: relative;
+}
+
+h4.s {
+    color: #37078f;
+}
+h4.u {
+    color: #1574b8;
+}
+h4.i {
+    color: #941910;
+}
+i.s {
+    color: #5900ff;
+}
+
+i.u {
+    color: #0093ff;
+}
+
+i.i {
+    color: rgb(255, 51, 0);
+}

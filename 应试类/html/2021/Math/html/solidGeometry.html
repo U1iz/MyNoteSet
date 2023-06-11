@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空间几何</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css">
+    <link rel="stylesheet" href="./css/main_style.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">公式</h1>
+    <ul id="cont">
+        <li><a href="javascript:;" id="option1">1.圆类</a></li>
+        <li><a href="javascript:;" id="option2">2.棱柱</a></li>
+        <li><a href="javascript:;" id="option3">3.锥体</a></li>
+    </ul>
+    <div id="circle">
+        <h1 style="text-align: center;">圆类</h1>
+        <div>
+            <h6>圆</h6>
+            <h3>r(R): 半径; d(D): 直径;</h3>
+            <h2>周长：C = 2πr = πd</h2>
+            <h2>面积: S = πr²</h2>
+            <h4>半圆周长: C = πr+2r</h4>
+            <h4>半圆面积: S = πr²/2</h4>
+        </div>
+        <div>
+            <h6>扇形</h6>
+            <h4>扇形弧长：L = 圆心角（弧度制） * r = n°πr/180°（n为圆心角）</h4>
+            <h4>扇形面积：S =n π r²/360=Lr/2（L为扇形的弧长）</h4>
+        </div>
+        <div>
+            <h6>球</h6>
+            <h2>球体积： V = (3/4)πr³</h2>
+            <h4>球表面积: S = 4πr² = πd²</h4>
+        </div>
+        <div>
+            <h6>圆锥</h6>
+            <h3>L: 母线长;r: 底面半径</h3>
+            <h2>表面积: S = πr²+πrl </h2>
+            <h2>侧面积: S = πrl</h2>
+            <h2>体积: V = 1/3Sh（S是底面积,h是圆锥高）
+                <!--弧长:n πR/180扇行面积:n πR^2/360 -->
+            </h2>
+            <!-- <h2>圆锥侧面积: S = πrl（l为母线长）</h2> -->
+            <h4>圆锥底面半径: r = n°/360°L</h4>
+        </div>
+        <div>
+            <h6>圆柱</h6>
+            <h2>圆柱体积： V = sh</h2>
+            <h4>圆柱体积：V = 底面积×高 或 V=1/2侧面积×高</h4>
+            <h2>圆柱侧面积：S = ch = 2πrh = πdh</h2>
+            <h4>圆柱侧面积：S侧 = 底面周长×高</h4>
+            <h2>圆柱表面积：s = ch+2πr²</h2>
+            <h4>圆柱表面积：S表 = 侧面积+2个底面积</h4>
+            <!-- 
+        圆柱体积：V=底面积×高或V=1/2侧面积×高
+
+        圆锥体积：V=底面积×高÷3
+
+        圆柱侧面积：S侧=底面周长×高
+
+        圆柱表面积：S表=侧面积+2个底面积
+
+        字母表示：
+
+        圆柱体积： V=sh
+
+        圆锥体积：V=sh÷3
+
+        圆柱侧面积：S=ch/2πrh/πdh
+
+        圆柱表面积：s=ch+2πr²
+     -->
+
+        </div>
+    </div>
+    <div id="prism">
+        <h1 style="text-align: center;">棱柱</h1>
+        <div>
+            <h6>通用公式:</h6>
+            <h2>体积: V = S底 * 高</h2>
+            <h2>侧面积: S = 底面周长 * 高</h2>
+            <h2>表面积: S = S侧 + S底 * 2</h2>
+        </div>
+
+        <div>
+            <h6>圆柱</h6>
+            <h2>圆柱体积： V = sh</h2>
+            <h4>圆柱体积：V = 底面积×高 或 V=1/2侧面积×高</h4>
+            <h2>圆柱侧面积：S = ch = 2πrh = πdh</h2>
+            <h4>圆柱侧面积：S侧 = 底面周长×高</h4>
+            <h2>圆柱表面积：s = ch+2πr²</h2>
+            <h4>圆柱表面积：S表 = 侧面积+2个底面积</h4>
+        </div>
+    </div>
+    <div id="pyramid">
+        <h1 style="text-align: center;">锥体</h1>
+        <div>
+            <h6>圆锥</h6>
+            <h3>L: 母线长;r: 底面半径</h3>
+            <h2>表面积: S = πr²+πrl </h2>
+            <h2>侧面积: S = πrl</h2>
+            <h2>体积: V = 1/3 S底 * h</h2>
+            <h4>圆锥底面半径: r = n°/360°L</h4>
+        </div>
+    </div>
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var circle = document.getElementById("circle");
+        var o2 = document.getElementById('option2');
+        var prism = document.getElementById("prism");
+        var o3 = document.getElementById('option3');
+        var pyramid = document.getElementById("pyramid");
+
+        function disBlock(objBtn, objBlock, objNone01, objNone02) {
+            objBtn.addEventListener("click", function () {
+                objBlock.style.display = 'block';
+                objNone01.style.display = 'none';
+                objNone02.style.display = 'none';
+            })
+        };
+
+        disBlock(o1, circle, prism, pyramid);
+        disBlock(o2, prism, circle, pyramid);
+        disBlock(o3, pyramid, prism, circle);
+
+    </script>
+</body>
+
+</html>

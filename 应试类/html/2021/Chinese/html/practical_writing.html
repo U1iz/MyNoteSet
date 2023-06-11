@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, 
+initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+    <title>应用文写作模(mu)板</title>
+    <link rel="shortcut icon" href=".././../../../../img/favicon.png">
+    <link rel="shortcut icon" href="http://res1433223.net3v.net/img/favicon.png">
+    <style>
+        * {
+            cursor: default;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden !important;
+            -webkit-overflow-x: hidden !important;
+        }
+
+        ::selection {
+            background-color: #fff;
+        }
+
+        body {
+            background-color: rgb(200, 200, 190);
+            font-size: 24px;
+
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: rgb(36, 18, 240);
+            color: initial;
+        }
+
+        h1 {
+            position: relative;
+            top: -1px;
+            font-size: 0.8rem !important;
+            border-bottom: 1px solid;
+            border-top: 1px solid;
+        }
+
+        h2 {
+            cursor: pointer;
+            font-size: 0.8rem !important;
+            border-bottom: 1px solid;
+            border-left: 1px solid;
+        }
+
+        h2:hover {
+            background-color: #eee;
+        }
+
+        .p1,
+        .p2 {
+            position: relative;
+            left: 1.6rem;
+        }
+
+        .list {
+            box-sizing: border-box;
+            width: 80%;
+            margin: 1.6rem auto;
+            padding: 0 0.2rem;
+            border: 2px solid rgba(70, 70, 70, .3);
+            background-color: rgba(200, 200, 200, .2);
+            box-shadow: 0px 0px 0px 0px #ddd;
+            transition: all 0.3s;
+            backdrop-filter: blur(6px);
+        }
+
+        .list:hover {
+            border: 2px solid rgb(70, 70, 70);
+            box-shadow: 6px 6px 14px 1px #999;
+            background-color: rgba(240, 240, 240, .1);
+            backdrop-filter: blur(2px);
+        }
+
+        .content {
+            box-sizing: border-box;
+            width: 100%;
+            margin: 1.6rem auto;
+            padding: 0.2rem;
+            border: 2px solid rgb(70, 70, 70);
+        }
+
+        .line {
+            width: 100%;
+            height: 0.2rem;
+            margin: 1.6rem auto;
+            background-color: #444;
+        }
+
+        h3 {
+            font: 800 0.72rem 'microsoft yaHei';
+            color: #666;
+        }
+
+        font {
+            display: block;
+            text-align: center;
+            margin: 0.2rem auto;
+            font: 800 1.4rem "microsoft yaHei";
+        }
+
+        i,
+        p,
+        s,
+        u {
+            text-decoration: none;
+            font-style: normal;
+            font: 600 1rem/1.5 'microsoft yaHei';
+        }
+
+        p {
+            text-indent: 2rem;
+        }
+
+        s,
+        u {
+            display: block;
+            text-align: right;
+        }
+
+        s {
+            margin-right: 2rem;
+        }
+
+        .t .top {
+            position: absolute;
+            /* left: 100%; */
+            border: 0.6rem solid rgb(200, 200, 190);
+            border-bottom: 1.2rem solid rgb(160, 220, 250);
+            /* transform: rotate(-90deg); */
+            background-color: #000;
+        }
+
+        .t {
+            position: sticky;
+            left: 93%;
+            top: 10px !important;
+        }
+
+        #top {
+            /* style="font:800 8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;" */
+            font: 800 2.4rem 'microsoft yaHei' !important;
+            color: #111;
+            border: none;
+            margin: 0.3rem auto;
+            text-align: center;
+            cursor: default;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        ul li {
+            position: relative;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        #version {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0px 5px;
+            transition: all 1.2s;
+            /* color: transparent; */
+        }
+
+        #tip {
+            position: absolute;
+            left: 0;
+            top: 1.6rem;
+            transition: all 0.4s;
+        }
+
+        #key {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            transition: all 0.2s;
+        }
+
+        em,
+        ins {
+            font-weight: 800;
+        }
+
+        ins {
+            color: rgb(173, 32, 32);
+            text-decoration: none;
+        }
+
+        em {
+            color: rgb(212, 0, 255);
+            color: rgb(109, 32, 173);
+            font-style: normal;
+        }
+        b {
+            color: rgb(0, 255, 242);
+            color: rgb(32, 163, 173);
+        }
+    </style>
+</head>
+
+<body style="overflow-x:hidden">
+    <!-- 
+    <font>标题</font>
+    <p>正文（首行缩进）</p>
+    <i>前顶格</i>
+    <p>前缩进</p>
+    <s>后缩进</s>
+    <u>后顶格</u>
+    我都觉得荒谬，明明一开始就没有得到，但却像失去了一样哭的稀里哗啦
+ -->
+    <div id="key">“T”键返回顶部</div>
+    <div id="version" style="
+    white-space: nowrap;
+    ">后期微改版(加强样式简js)</div>
+    <!-- ">初始常规版(简陋样式简js)</div> -->
+    <div id="tip" style="
+    white-space: nowrap;">建议使用新版浏览器打开,旧版本浏览器(如ie6、7、8)可能会出现无法预知的问题，但不会对使用造成太大影响。移动端适配一般，建议使用分辨率不小于1920 * 1080的屏幕浏览</div>
+    <canvas></canvas>
+    <canvas>你的浏览器不支持canvas</canvas>
+    <!-- <a href="#top" class="t">
+        <div class="top"></div>
+    </a> -->
+    <!-- &gt; -->
+    <h1 id="top">
+        应用文写作模板</h1>
+    <div class="list">
+        <!-- 1 -->
+        <a href="javascript:;">
+            <h1>一、条据</h1>
+        </a>
+        <div class="p1">
+            <a href="#a01">
+                <h2 style="color: #000">1、请假条</h2>
+            </a>
+            <a href="#a02">
+                <h2 style="color: #000">2、留言条(请托条)</h2>
+            </a>
+            <a href="#a03">
+                <h2 style="color: #000">3、借条</h2>
+            </a>
+            <a href="#a04">
+                <h2 style="color: #000">4、收条</h2>
+            </a>
+            <a href="#a05">
+                <h2 style="color: #000">5、领条</h2>
+            </a>
+            <a href="#a06">
+                <h2 style="color: #000">6、欠条</h2>
+            </a>
+            <a href="#a07">
+                <h2 style="color: #000">7、还可以写成《借条 (领条、收条、欠条) 》</h2>
+            </a>
+        </div>
+        <!-- 2 -->
+        <a href="javascript:;">
+            <h1>二、启事</h1>
+        </a>
+        <div class="p2">
+            <a href="#q01">
+                <h2>1、<ins>征文（征集）启事</ins></h2>
+            </a>
+            <a href="#q02">
+                <h2>2、寻物启事</h2>
+            </a>
+            <a href="#q03">
+                <h2>3、招领启事</h2>
+            </a>
+            <a href="#q04">
+                <h2>4、迁址启事</h2>
+            </a>
+            <a href="#q05">
+                <h2>5、<ins>招聘启事</ins></h2>
+            </a>
+        </div>
+        <!-- 3 -->
+        <a href="javascript:;">
+            <h1>三、书信</h1>
+        </a>
+        <div class="p2">
+            <a href="#l01">
+                <h2>1、一般书信</h2>
+            </a>
+            <a href="#l02">
+                <h2>2、<ins>感谢信</ins></h2>
+            </a>
+            <a href="#l03">
+                <h2>3、证明信</h2>
+            </a>
+            <a href="#l04">
+                <h2>4、倡议书</h2>
+            </a>
+        </div>
+        <!-- 4 -->
+        <a href="javascript:;">
+            <h1>四、计划</h1>
+        </a>
+        <div class="p2">
+            <a href="#p01">
+                <h2>1、<em>计划</em></h2>
+            </a>
+        </div>
+        <!-- 5 -->
+        <a href="javascript:;">
+            <h1>五、总结</h1>
+        </a>
+        <div class="p2">
+            <a href="#s01">
+                <h2>1、<b>单位总结</b></h2>
+            </a>
+            <a href="#s02">
+                <h2>2、<b>个人总结</b></h2>
+            </a>
+        </div>
+        <!-- 6 -->
+        <a href="javascript:;">
+            <h1>六、说明书</h1>
+        </a>
+        <div class="p2">
+            <a href="#d01">
+                <h2>1、说明书</h2>
+            </a>
+        </div>
+        <!-- 7 -->
+        <a href="javascript:;">
+            <h1>七、导介词</h1>
+        </a>
+        <div class="p2">
+            <a href="#g01">
+                <h2>1、<del>导介词（景点、场馆简介）</del></h2>
+            </a>
+        </div>
+        <!-- 8 -->
+        <a href="javascript:;">
+            <h1>八、<b>规章制度</b></h1>
+        </a>
+        <div class="p2">
+            <a href="#r01">
+                <h2>1、规则</h2>
+            </a>
+            <a href="#r02">
+                <h2>2、守则</h2>
+            </a>
+            <a href="#r03">
+                <h2>3、公约</h2>
+            </a>
+        </div>
+        <!-- 9 -->
+        <a href="javascript:;">
+            <h1>九、求职（自荐）信</h1>
+        </a>
+        <div class="p2">
+            <a href="#w01">
+                <h2 style="color: #000">1、<ins>求职（自荐）信</ins></h2>
+            </a>
+        </div>
+        <!-- 10 -->
+        <a href="javascript:;">
+            <h1>十、演讲稿</h1>
+        </a>
+        <div class="p2">
+            <a href="#sp1">
+                <h2 style="color: #000">1、<ins>演讲稿</ins></h2>
+            </a>
+        </div>
+    </div>
+    <div class="line"></div>
+    <!-- ----------------------------------------------华丽的分割线---------------------------------------------- -->
+    <div class="content">
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            一、条据</h1>
+        <div class="list" id="a01">
+            <h3>1、请假条模板:</h3>
+            <font>请假条</font>
+            <i>XXX: （请假对象）</i>
+            <p><b>我</b>（代人请假要写被代人姓名）<ins>因XXX</ins>（事因），<b>特</b>（代请要写“特让我代他”）<ins>请假X天</ins>（补充<ins>具体</ins>时间），<em>请予批准</em>。</p>
+            <p>此致</p>
+            <i>敬礼</i>
+            <s>请假人姓名</s>
+            <u>X年X月X日</u>
+        </div>
+        <div class="list" id="a02">
+            <h3>2、留言条模板:</h3>
+            <font>（一般不需要写标题）</font>
+            <i>XXX: （被留言人、请托人）</i>
+            <p><ins>我刚才到XXX</ins>（地方名）找你，<ins>正逢你</ins>（被留言人不在原因），<ins>我把XXX放你桌上，请过目指正</ins>（也可写其他所托事情），<ins>我的联系方式是</ins>：XXXX、<em>谢谢（或打扰了）</em>。</p>
+            <p>此致</p>
+            <i>敬礼（<ins>如果被留言人是长辈上级要加上</ins>）</i>
+            <s>请留言人姓名</s>
+            <s>X年X月X日X时X分</s>
+        </div>
+        <div class="list" id="a03">
+            <h3>3、借条模板:</h3>
+            <font>今借到</font>
+            <p>（谁的）（借到东西的<ins>具体规格、数量、编号等</ins>），
+                （<ins>用途</ins>，如 “用于 XXX” “供 XXX 用”，有时可以不写），<ins>将于（日期）归还</ins>。</p>
+            <p><b>此据</b></p>
+            <s><em>经手人: XXX</em></s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="a04">
+            <h3>4、收条模板:</h3>
+            <font>今收到</font>
+            <p>（谁的）（收到东西的具体规格、数量、或具体的金额）。</p>
+            <p><b>此据</b></p>
+            <s><em>经手人: XXX</em></s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="a05">
+            <h3>5、领条模板:</h3>
+            <font>今领到</font>
+            <p>（谁的）（收到东西的具体规格、数量、金额），XXXX（写清楚所领东西的<ins>具体性质或用途</ins>）。</p>
+            <p><b>此据</b></p>
+            <s><em>经手人: XXX</em></s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="a06">
+            <h3>6、欠条模板:</h3>
+            <font>今欠</font>
+            <p>（谁的）（领到东西的具体规格、数量、编号等），（<ins>用途</ins>，如 “用于 XXX” “供 XXX 用”，有时可以不写），将于（日期）归还。</p>
+            <p><b>此据</b></p>
+            <s><em>经手人: XXX</em></s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="a07">
+            <h3>7、还可以写:</h3>
+            <font>借条（领条、收条、欠条）</font>
+            <p>今（或 “现”）借（或 “领”“收”“欠”）到（欠条不要写 “到”）XX（谁的）XXXX（财务具体规格、数量）用于（<ins>收条欠条用途可以不写</ins>），将于 XX（日期）归还。</p>
+            <p><b>此据</b></p>
+            <s><em>经手人: XXX</em></s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list">
+            <h3>所有凭证性单据正文<span style="color: #232323">涉及金额、数量的要大写： 壹 、 贰 、 叁 、 肆 、 伍 、 陆 、 柒 、 捌 、 玖 、
+                    拾 、 佰 、 仟 、 万 、 亿 、 元 、 角 、 分 、 零 ，金额后面加 “整”，数量不加</span>。
+            </h3>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            二、启事</h1>
+        <div class="list" id="q01">
+            <h3>1、征文（征集）启事模板:</h3>
+            <font>（“主题”）征文（或 “征集宣传用语 等” ）启事</font>
+            <p>（背景意义说明，可扩展内容）为了..., ..., ..., 特举办 “......” 征文活动。具体事项如下：</p>
+            <p>一、征文内容：（或“ 主题 ”）：......, ......, ...... 。（可扩展内容）</p>
+            <p>二、参考对象：...... 。</p>
+            <p>三、截稿日期：（征文自......至......止）</p>
+            <p>四、撰写要求：（根据题意，加入此项目，可以适当扩展）</p>
+            <p>1. 内容健康，坚持原创，...... 。</p>
+            <p>2. 体裁，风格：（体裁指诗歌散文小说等，看题目要求写），风格不拘。</p>
+            <p>3. 篇幅：......（注意不要出现类似“不超过1500字左右” 的语病）</p>
+            <p>五、投稿方法：文稿发（送）至（地点或邮箱），稿件上写明（如：班级、姓名 等）。</p>
+            <p>六、评审及奖励方法：</p>
+            <p>1. 评委由...组成</p>
+            <p>2. 由评委选出一等奖、二等奖、三等奖各若干名。发给奖状和奖品，以资鼓励。（或补充 “发表” 等事宜也可）</p>
+            <p>欢迎......踊跃投稿。</p>
+            <p>（联系人：XXX）</p>
+            <p>（联系电话：XXXXXXX）</p>
+            <P><b>特此启事</b></P>
+
+            <s>征文机构名</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="list" id="q01">
+            <h3>1、征文（征集）启事模板_笔记:</h3>
+            <font>征文启事</font>
+            <p>（背景）</p>
+            <p>一、征文主题</p>
+            <p>二、<ins>参考对象</ins></p>
+            <p>三、<ins>截稿日期</ins>（征文自......至......止）</p>
+            <p>四、<ins>撰写要求</ins></p>
+            <p>2. <ins>体裁，风格</ins></p>
+            <p>3. <ins>篇幅</ins></p>
+            <p>五、<ins>投稿方法</ins></p>
+            <p>六、<em>评审及奖励方法</em></p>
+            <p>欢迎......参加。</p>
+            <p><ins>联系方式</ins></p>
+            <P><b>特此启事</b></P>
+
+            <s>征文机构名</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="list" id="q02">
+            <h3>2、寻物启事模板:</h3>
+            <font>寻物启事</font>
+            <p>谁（自己用 “<ins>本人</ins>”）什么<em>时候</em>什么<em>地点</em>遗失<em>何物</em>，
+                <ins>特征</ins>（物的 数量，特征 等<ins>写清楚</ins>）。<ins>请拾到者或知情人与XXX联系</ins>，当面酬谢，<ins>电话</ins>：XXXXXXX，<ins>地址</ins>：XX路XX号XX室。</p>
+            <P><b>特此启事</b></P>
+
+            <s>写启事人或单位（单位要写“（公章）”）</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="list" id="q03">
+            <h3>3、招领启事模板:</h3>
+            <font>招领启事</font>
+            <p>（<em>有时候要写拾取人所属单位</em>）XXX（什么<em>人</em>）在XXX（什么<em>地方</em>）<em>拾到X物</em>（<ins>数量，类型即可，不要多写</ins>）
+                ， 内有XXX若干，其他物品数件。<ins>请遗失者到XXX处领取</ins>。</p>
+            <P><b>特此启事</b></P>
+
+            <s>写启事人或单位（单位要写“（公章）”）</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="list" id="q04">
+            <h3>4、迁址启事模板:</h3>
+            <font>迁址启事</font>
+            <p>XXX 单位<ins>原地址</ins>在X市X区X路X号。<ins>现为XXX的需要</ins>（如：业务发展，规模扩大），<ins>自X年X月X日期</ins>，<ins>迁址至</ins>X市X区X路X号，<em>望相互转告，以便有关人士莅(lì)临联系业务</em>。</p>
+            <p>联系电话：XXXXXXX</p>
+            <P><b>特此启事</b></P>
+
+            <s>单位名称</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="q05">
+            <h3>5、招聘启事模板:</h3>
+            <font>招聘启事</font>
+            <p>招聘单位<ins>基本情况</ins>介绍（性质、规模、荣誉 等），为... ,..., ... （'业务拓展'，'推进行业工作的开展' 等，或写 “因单位规模扩大需要”、“因工作需要
+                等”），现公开<ins>招聘工作人员，具体招聘条件如下</ins>：</p>
+            <p>一、<ins>基本条件</ins></p>
+            <p>1. <ins>学历</ins>（具有......学历）</p>
+            <p>2. <ins>年龄</ins>要求（XX 岁以下）</p>
+            <p>3. <ins>性别</ins>要求（可以“具体岗位及要求”分项写，也可统一写，看具体要求）</p>
+            <p>4. <ins>技能</ins>要求（如：能够熟练使用（操作）......，具备良好的......能力）</p>
+            <p>5. <ins>品德</ins>要求（诚实敬业，踏实能干，身体健康，吃苦耐劳，自律能力强，富有团队合作精神 等）</p>
+            <p>6. <em>......优先考虑</em></p>
+            <p>二、<ins>具体岗位及要求</ins><em>（招聘对象-招聘要求-招聘范围）</em></p>
+            <p>岗位 1（<ins>X名</ins>）</p>
+            <p>1. <ins>能力</ins>要求（熟悉）</p>
+            <p>2. <ins>工作经历要求</ins>（具有X年以上XXX（专业）工作经验 等）</p>
+            <p>3. <ins>薪金待遇</ins>：（（月）年薪 XXX）</p>
+            <p>岗位 2（X名）</p>
+            <p>1. 能力要求（熟悉）</p>
+            <p>2. 工作经历要求（具有X年以上XXX（专业）工作经验 等）</p>
+            <p>3. 薪金待遇：（（月）年薪 XXX）</p>
+            <p>岗位 3（X名）</p>
+            <p>1. 能力要求（熟悉）</p>
+            <p>2. 工作经历要求（具有X年以上XXX（专业）工作经验 等）</p>
+            <p>3. 薪金待遇：（（月）年薪 XXX）</p>
+            <p>三、<ins>报名及考核</ins></p>
+            <p>1. <ins>报名时间</ins><em>（报名日期-截止日期）</em>：应聘人员于X年X月X日前，持学历，学位证书以及自备的有关应聘资料，交至人事处。</p>
+            <p>2. <ins>考核程序</ins>：初选合格者陆续安排面试，面试通过可以立即上岗。</p>
+            <p>四、<ins style="color: rgb(255, 0, 0);">联系方式</ins>：</p>
+            <p>联系人：XXX</p>
+            <p>联系电话：XXXXXXX</p>
+            <P>联系地址：X市X区X路X号X室</P>
+            <P><b>特此启事</b></P>
+
+            <s>单位人事处（科）名</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            三、书信</h1>
+        <div class="list" id="l01">
+            <h3>1.一般书信模板：</h3>
+            <font>给XXX的XX信</font>
+            <i><ins>称呼</ins>：（一般加“ 尊敬的XXX ” ， “ 敬爱的XXX ” ）</i>
+            <p><ins>问候语</ins>（“ 你好！ ” 或 “ 你们好！ ”）</p>
+            <P><em>连接语</em>，是在问候之后，<ins>说明写信的目的</ins>。如“ 很久没有写信了，很是想念，特写信问候。
+                ” “ 听说南京新华书店正在卖《中国图书大辞典》，我想求你代买一部 ” “
+                现在，我在学习上有一个问题解决不了，特向您请教。”
+                如果写的是回信，先要说明“ 某月某日来信已收到，请勿念。 ”
+            </P>
+            <P>XXXXXXX 正文段落一</P>
+            <P>XXXXXXX 正文段落二</P>
+            <P>XXXXXXX 正文段落三</P>
+            <p>（正文段落为主体部分，字数最多，一般<ins>讲一件事请谈一下感受</ins>，最好想三段，或按<ins>是什么为什么怎么办分别写</ins>，注意审题，详略安排好）</p>
+            <p>结尾一般<ins>祝福</ins>。（如“ 最后，我衷心地祝愿 XXXXXXX ”）</p>
+            <P>此致</P>
+            <i>敬礼</i>
+            <s>您的XX（身份）：XXX</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="l02">
+            <h3>2.感谢信模板:</h3>
+            <font>感谢信</font>
+            <i><ins>称呼</ins>（被感谢人或单位，有时后面加上“ 领导 ”）</i>
+            <p><ins style="color:rgb(255, 0, 0)">你（们）好：</ins></p>
+            <p>我（们）是......, ......, ......今天我（们）怀着万分激动的心情写这封信，希望能够借着这封信感谢......, ......, ......。（<ins>表明感谢缘由</ins>）</p>
+            <P>叙述对方对自己帮助的先进事迹（什么<em>时间</em>、什么<em>地点</em>、<em>什么帮助</em>、帮助的<ins>作用</ins>以及对这种帮助的<ins>评价</ins>、评价可用用“ <b>这是一种</b>......。 ”、“ 这<b>充分体现了</b>......。 ”）</P>
+            <p>为此，我（们）向......表示由衷的感谢和诚挚的谢意。我（们）一定......，
+                ......, ......, .......。（可以加入今后自己怎么做来<ins>报答被感谢人</ins>，主要是自己的意愿：如 “回报社会”、
+                “回报祖国”、 “最后，衷心祝愿” 等）</p>
+            <p>此致</p>
+            <i>敬礼</i>
+            <s>感谢人</s>
+            <s>日期（<ins>年月日齐全</ins>）</s>
+        </div>
+        <div class="list">
+            <h3>2.感谢信模板（笔记）:</h3>
+            <font>感谢信（笔记）</font>
+            <i>称呼（被感谢人或单位，有时后面加上“ 领导 ”）</i>
+            <p><ins style="color:rgb(255, 0, 0)">你（们）好：</ins></p>
+            <p><ins>自我介绍 + 简要原因</ins></p>
+            <P><ins>详细原因 + 效果 + 详细评价</ins></P>
+            <p><ins>感谢，回报（未来)</ins></p>
+            <p>此致</p>
+            <i>敬礼</i>
+            <s>感谢人</s>
+            <s>日期（<b>年月日齐全</b>）</s>
+        </div>
+        <div class="list" id="l03">
+            <h3>3.证明信:</h3>
+            <font>证明信</font>
+            <i>XXX: (要证明单位)</i>
+            <p>XXX（人名）<ins></ins>是我单位</ins>（或“我校”等）XXX（要证明的身份）。<ins>他在单位期间</ins>（或“在校期间”等），（后面写具体的东西， <ins>是一名优秀的XXX</ins>。（有的证明只需要写第一句话））</p>
+            <s>（单位名称）（<em>公章</em>）</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="l04">
+            <h3>4.倡议书模板:</h3>
+            <font>倡议书</font>
+            <i><ins>XX们</ins>： （发出倡议的对象）</i>
+            <p>首段：倡议的<ins>背景、根据、原因、目的</ins>，<em>为此，我们倡议</em>：</p>
+            <p>一、XXXXXXXXXXXXXXXXXXXXXX</p>
+            <p>二、XXXXXXXXXXXXXXXXXXXXXX</p>
+            <p>三、XXXXXXXXXXXXXXXXXXXXXX</p>
+            <p>......</p>
+            <p>N、XXXXXXXXXXXXXXXXXXXXXX（至少写<ins>5</ins>点，注意每项都要<ins>切实可行，具体点，勿空谈</ins>）</p>
+            <p>结尾：<em>我们发自内心地呼吁大家</em>：让XXXXXXXXXXXXXX, 让XXXXXXXXXXXXXX ，让XXXXXXXXXXXXXX！</p>
+            <u>倡议人或单位名称（单位公章）</u>
+            <u>X年X月X日</u>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            四、计划</h1>
+        <div class="list" id="p01">
+            <h3>1.计划模板:</h3>
+            <font><ins>单位名称</ins> + <ins>期限</ins> + <ins>内容</ins> + 文种（计划）</font>
+            <p>（前言）为了 XXXXXXXXXXXX，激发 XXXXXXXXXXXXXX，增加 XXXXXXXXXXXXXX，提高 XXXXXXXXXXXXX，我们根据 XXXXXXXXXXXXXX 的实际情况，特制定以下
+                XXXXXXXXXXXXX
+                计划：（<ins>简明扼要说明制定计划的目的或依据</ins>，提出<em>工作的总任务或总目标</em>）
+            </p>
+            <p>一、<ins>目标和任务</ins></p>
+            <p>1、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>2、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>......</p>
+            <p>一、<ins>方法和措施</ins></p>
+            <p>1、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>2、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>3、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>4、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>......</p>
+            <p>一、<ins>时间和步骤</ins></p>
+            <p>1、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>2、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>3、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>4、XXXXXXX，XXXXX，XXXXXXXXX，XXXXXXXXX。</p>
+            <p>......</p>
+            <p>其余未尽事宜，根据形势需要增补或调整。(<ins style="color:red">表达决心，号召性话语</ins>)</p>
+            <s>制定单位</s>
+            <s>日期</s>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            五、总结</h1>
+        <div class="list" id="s01">
+            <h3>1.单位总结模板:</h3>
+            <font><em>单位名称</em> + <ins>期限</ins> + <ins>内容</ins> + 文种（总结）</font>
+            <p>（前言）为了 XXXXXXXXXXXX，<ins>过去的一年</ins>，<ins>在XXXX的领导下</ins>，（在XXXX关注下，在指XXXX导下，在XXXX支持下，在XXXX帮助下，在协XXXX助下），
+                <ins>我们努力履行了</ins>XXXXXXXXXXXXXX<ins>的职责</ins>，认真落实的各项任务XXXXXXXXXXXXXXXXXXXXXXX，注重。现将XXXXXXXXXXX工作情况总结如下：（介绍的<em>背景、目的、指导思想等</em>）
+            </p>
+            <P>一、<ins>基本情况</ins></P>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXX</p>
+            <p>二、<ins>经验体会</ins></p>
+            <p>1. <ins>指导思想明确</ins></p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXX</p>
+            <p>2. 活动展开正常</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXX</p>
+            <p>3. XX 素质提高</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXX</p>
+            <p>三、<ins>问题教训</ins></p>
+            <p>1. 关于<em>沟通</em> XXXXXXXXXXXX，XXXXXXXXXXXX，XXXXXXXXXXXX</p>
+            <p>1. 关于<em>时间</em> XXXXXXXXXXXX，XXXXXXXXXXXX，XXXXXXXXXXXX</p>
+            <p>1. 关于<em>创新</em> XXXXXXXXXXXX，XXXXXXXXXXXX，XXXXXXXXXXXX</p>
+            <p>四、<ins>解决办法</ins></p>
+            <p>1. XXXXXXXXXXXXXXX，XXXXXXXXXXXXXXX，XXXXXXXXXXXXXXX</p>
+            <p>2. XXXXXXXXXXXXXXX，XXXXXXXXXXXXXXX，XXXXXXXXXXXXXXX</p>
+            <p>五、<ins>努力方向</ins></p>
+            <p>活动虽完，却回味无穷。......</p>
+            <s>X X X 单位</s>
+            <s>X X X X 年 X 月 X 日</s>
+        </div>
+        <div class="list" id="s01">
+            <h3>1.单位总结模板:</h3>
+            <font><em>单位名称</em> + <ins>期限</ins> + <ins>内容</ins> + 文种（总结）</font>
+            <p><ins>背景</ins></p>
+            <P>一、<ins>基本情况</ins></P>
+            <p><ins style="color:red;">取得的 成绩/荣誉/名次...</ins></p>
+            <p>三、问题教训</p>
+            <p><ins>存在的问题</ins></p>
+            <p>四、解决办法</p>
+            <p><ins style="color:red;">改进措施</ins></p>
+            <p>五、努力方向</p>
+            <p><ins>结尾</ins>（<ins style="color:red;">表决心</ins>）</p>
+            <s>X X X 单位</s>
+            <s>X X X X 年 X 月 X 日</s>
+        </div>
+        <div class="list" id="s02">
+            <h3>1.个人总结模板:</h3>
+            <font>期限 + 内容 + 文种（总结）</font>
+            <p>（<ins>前言</ins>）为了 XXXXXXXXXXXX，过去的一年，在XXXX的领导下，（在XXXX关注下，在指XXXX导下，在XXXX支持下，在XXXX帮助下，在协XXXX助下），
+                我努力履行了XXXXXXXXXXXXXX的职责，认真落实的各项任务XXXXXXXXXXXXXXXXXXXXXXX，注重。现将XXXXXXXXXXX工作情况总结如下：
+                （介绍的背景、目的、指导思想等）</p>
+            <p>一、思想道德方面</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXXXX</p>
+            <p>二、<ins>专业学习</ins>方面</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXXXX</p>
+            <p>三、<ins>工作能力</ins>方面</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXXXX</p>
+            <p>四、<ins>问题教训</ins>方面</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXXXX</p>
+            <p>五、<ins>努力方向</ins>方面</p>
+            <p>XXXXXXXXXXXXX，XXXXXXXXXXXXX，XXXXXXXXXXXXX</p>
+            <s><ins>撰写人</ins>：XXX</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            六、说明书</h1>
+        <div class="list" id="d01">
+            <h3>1.说明书模板:</h3>
+            <font>产品（商品）名称 + 说明书</font>
+            <p>前言（用<em>简练的语言</em>概括产品（商品）的主要情况和特点，有的说明书也<em>可以不写前言</em>，直接进入主题）</p>
+            <p><ins>药品名称</ins>: XXXXXXX</p>
+            <p><ins>成分</ins>: XXXXXXXXXX</p>
+            <p><ins>功能主治</ins>: XXXXXXX</p>
+            <p><ins>用法用量</ins>: XXXXXXX</p>
+            <p><ins style="color:red">不良反应</ins>: XXXXXXX</p>
+            <p><ins style="color:red">禁忌</ins>: XXXXXXXXXXX（使用时忌讳，常用“宜” “慎用” “禁止”）</p>
+            <p><ins style="color:red">注意事项</ins>: XXXXXXXXXX（列出<ins>三到四条</ins>注意事项）</p>
+            <p><ins style="color:red">商品保质期</ins>: （一年或两年）</p>
+            <p><ins style="color:red">贮藏条件</ins>: XXXXXXX</p>
+            <p><em>生产厂家（地址）</em>: XXXXXXX（正文如果没有此项，要落款写厂家）</p>
+            <p><em>批准文号</em>: XXXXXXX</p>
+            <p><ins>生产日期</ins>: X 年 X 月 X 日</p>
+            <i style="display:block;">（注意：正文内容要<ins>一一分段写</ins>，语言要<em>通俗易懂，不要带文采的句子</em>，标题除外）</i>
+            <i>（<em>下方一般不写日期，但可以在单位名称下写“地址”，“电话”</em>）</i>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            七、导介词</h1>
+        <div class="list" id="g01">
+            <h3>1.导介词（景点、场馆简介）模板:</h3>
+            <font>景点、场馆名称 + 简介（导介词）</font>
+            <i>（也可在名称后面加表特色的词语，如《革命圣地井冈山》、《哈尔滨——天鹅颈下的明珠》）</i>
+            <p>正文内容包括概况（用简练的语言概括旅游景点的主要情况和特点）、地理位置、气候特征、外部面貌、内部结构、（组成部分、建筑面积）
+                、历史沿革、近况、布局特色（有特色的地方，如土特产等）。按照说明文语言去写，说明顺序（一般行进顺序，如：一进门、东面、北面）、
+                行文结构要注意（一般总分总）可以略带文采，如恰当使用修辞、引用史实传说，但要有重点。）</p>
+            <p>注意：导介词是在简介的基础上在创作，但与简介不一样，它有导介作用，正文开头还有引用及惯用语，如“欢迎大家来参观XXX，XXX”
+                “大家好，我是XXX，欢迎大家来到XXX”等等：正文内部注意衔接语与口语，如“现在我们看到是的XXX，接下来带大家参观的是XXX”
+                “刚才我介绍的是XXX，接下来外大家介绍的是XXX”等：正文最后有结束语，如“今天的游览到此结束，最后，我在这里衷心地祝愿大家天天都有好心情”
+                “好，大家紧张的一日游就要结束了，谢谢大家对我工作的支持，如果你们有宝贵的意见，尽管提出来，我一定虚心接受。
+                欢迎你们的再次光临，我也非常愿意再次为你们服务！”等。
+                口语化是导介词的重要特色。</p>
+            <s>单位名称</s>
+            <s>日期</s>
+            <i>（有特殊需要的话还可以在正文最后添加“门票价格、交通路线、地址、邮编、E-mail、电话、传真、网站”等）</i>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            八、规章制度</h1>
+        <div class="list" id="r01">
+            <h3>1.规则模板:</h3>
+            <font>内容 + 文种（规则）</font>
+            <p>（<ins>前言</ins>）为了XXXXXXXXX，根据XXXXXXXXXXX，特制定以下XX（文种）</p>
+            <p>一、XXXXXXXXXXXXXXXXXXXXXX。</p>
+            <p>二、XXXXXXXXXXXXXXXXXXXXXX。</p>
+            <p>......</p>
+            <p>六、XXXXXXXXXXXXXXXXXXXXXX。</p>
+            <p>......</p>
+            <i style="display: block;">（&gt; 5）（<ins style="color:red">时间、空间、角度</ins>）</i>
+            <i style="display: block;">（1. 主体部分具体些规则的条款，内容不能有交叉重复。）</i>
+            <i style="display: block;">（2. 各条款应该指明应该怎样，不应该怎样，赔偿事宜、时限、数量要求，力求一目了然，用 <ins style="color:red">“遵守” “不得” “应该” “注意” 等</ins>字样）</i>
+            <i style="display: block;">（3. 同时要注意各条款之间的<ins style="color:red">顺序性</ins>。如实验规则，可以按照时间顺序来写，用“XX前” “XX中” “XX后” ：演讲比赛规则按照逻辑顺序，用
+                “参赛须知” 、“评分标准” 、 “演讲要求” 、 “奖项设置” “比赛要求” 等。）</i>
+            <s>制定单位或部门</s>
+            <s>X年X月X日</s>
+            <i>（<em>如果标题出现单位名称与发布日期，落款中的制定单位与日期可以不写</em>）</i>
+        </div>
+        <div class="list" id="r02">
+            <h3>2.守则模板:</h3>
+            <font><em>使用对象（内容，此项有时无）</em>+ 守则</font>
+            <p>一、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>二、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>三、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>四、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>五、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>六、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>七、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>......</p>
+            <i>（一般第一条写“<ins style="color:red">热爱祖国，热爱人民、热爱中国共产党，热爱社会主义、热爱劳动、热爱科学</ins>”，
+                第二条写“ <ins style="color:red">热爱集体</ins> ”
+                等，后面可以从<ins>思想、学习、道德、遵纪、文明、诚信</ins>、（或<em>德智体美劳</em>）等方面展开。各条内容不能有交叉或重复）</i>
+            <s>制定单位或部门</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list" id="r02">
+            <h3>3.公约模板:</h3>
+            <font><em>内容（有时候加双引号，看是否有特殊含义）</em>+ 公约</font>
+            <p>为了XXXXX，XXXXX，XXXXXXX，特制定本公约。(<ins>前言</ins>)</p>
+            <p>一、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>二、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>三、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>四、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>五、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>六、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>七、XXXXXXX，XXXXXXX，XXXXXXX，XXXXXXXXXXXXX</p>
+            <p>（这部分表述公约的具体内容，各条内容之前不能有交叉或重叠）</p>
+            <p>希望大家 XXXXXX，XXXXXX。</p>
+            <p>（结尾部分提出希望、要求，如“ <ins>共同遵守</ins> ”、 “ <ins>互相促进</ins> ” <ins>等</ins>）</p>
+            <s>制定单位或部门</s>
+            <s>X 年 X 月 X 日</s>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            九、求职（自荐）信</h1>
+        <div class="list" id="w01">
+            <h3>1.求职（自荐）模板:</h3>
+            <font>求职信(居中)</font>
+            <i><ins>尊敬的</ins>XX（单位名称）人事部负责人：</i>
+            <p style="color: #444;">（称谓顶格+冒号。求职信所给的对象很难明确，也许是人事部一般职员，也许是经理，如果你对老板比较了解的话可以直接给老板。
+                当然，如果你根本就不认识招聘公司的任何人，最好写上“人事部负责人”较妥）</p>
+            <br>
+            <p><ins>您好！感谢您能在百忙之中抽空阅读我的求职（自荐）材料。</ins></p>
+            <i style="display: block;color: #444;">（问候语“您好”第三行空两格开始写，紧随其后的是客气地表达谢意。署名、日期写在正文嗯右下方、均缩进两格，日期写在署名的下方）</i>
+            <br>
+            <p>我是XX学校的应届毕业生，就读于XX专业。近期在XX上获知贵单位正在招聘XX方面的岗位。我经过了学校X年的学习和锻炼，相信我有实例应聘这个职位。</p>
+            <i style="display: block;color: #444;">（本段介绍自己<ins>毕业的时间、学校、所学的专业</ins>，
+                然后讲明白自己<ins>应聘的岗位及愿望</ins>。）</i>
+            <br>
+            <p>我在校期间学习了XXX，XXX等专业知识，获得了XXX，XXX等专业等级证书。学习成绩优异、特别是X科成绩突出。X次获得X等奖学金，X次获得X荣誉（市
+                “三好学生”、校 “三好学生” 等）。我在校担任XX干部（班干部、社团干部等）工作，组织XX等活动，参加了XX等社会活动，具有一定的组织能力。获得了XX荣誉
+                （市级 或 校级优秀团干部和优秀学生会干部）。</p>
+            <i style="display: block;color: #444;">（本段具体介绍了自己的<ins>学习成绩和社会工作能力</ins>）</i>
+            <br>
+            <p>在校实习期间我在XX（单位）XX岗位勤奋学习和工作，熟悉专业知识，也积累了一定的工作经验。我利用业余时间学习了XXX，XXX等，获得了XXX等资格证书。</p>
+            <i style="display: block;color: #444;">（本段介绍自己<ins>工作能力和以及工作经验</ins>）</i>
+            <br>
+            <p>我性格XXX，XXX，XXX。我喜欢XXX，XXX，XXX 等。</p>
+            <i style="display: block;color: #444;">（本段简单介绍自己的<ins>性格和兴趣</ins>）</i>
+            <br>
+            <p>希望贵单位能给我一次机会，我会尽职尽责。一个人唯有把所擅长的投入到社会中才能是自我价值得以实现！我愿与贵单位携手共进，共创辉煌！</p>
+            <i style="display: block;color: #444;">（本段进<ins>一步表达自己求职的愿望和决心，以及自己在未来岗位上的表现</ins>）</i>
+            <br>
+            <p><ins>再次感谢您的阅读和关注！</ins></p>
+            <br>
+            <p><b>此致</b></p>
+            <i><b>敬礼</b></i>
+            <s>求职人：XXX</s>
+            <s>X 年 X 月 X 日</s>
+            <P><ins style="color:red">附件：相关简历、证书复印件</ins></P>
+        </div>
+        <div class="list">
+            <h3>1.求职（自荐）模板(笔记):</h3>
+            <font>求职信(居中)</font>
+            <i><ins style="color:red">尊敬的领导：</ins><em>（一定要写冒号）</em></i>
+            <p>您好！<ins>感谢您能在百忙之中抽空阅读我的求职（自荐）材料</ins>。</p>
+            <p><em>我是XXX，就读于XX专业，近期在XX上得知贵单位正在招聘XX方面的岗位</em></p>
+            <p><ins style="color:red">获得的荣誉（多）</ins></p>
+            <p><ins>能力</ins></p>
+            <p><ins>经历</ins></p>
+            <p><ins>再次感谢您的阅读和关注！</ins></p>
+            <p><ins style="color:red">决心</ins></p>
+            <p><ins>联系方式</ins>（<ins style="color:red">重要！！！</ins>）</p>
+            <p>此致</p>
+            <i>敬礼</i>
+            <s>求职人：XXX</s>
+            <s>X 年 X 月 X 日</s>
+            <P><ins>附件：相关简历、证书复印件</ins></P>
+        </div>
+        <div class="line"></div>
+        <h1
+            style="font:800 1.8rem microsoft yaHei;color: #111;border: none;margin: 0.3rem auto;text-align: center;cursor: default;">
+            十、演讲稿</h1>
+        <div class="list" id="sp1">
+            <h3>1.演讲稿模板:</h3>
+            <font>标题（居中）</font>
+            <i style="display: block;color: #444;">（标题的种类：1. 主标题（概括主题）+ 副标题（概括背景或主要内容））</i>
+            <br>
+            <i style="display: block;color: #444;">（2.
+                一个标题：写法：（1）要表<ins>态、含情</ins>；
+                （2）标题的内容<ins>必须揭示或涵盖演讲稿中心</ins>；（3）<ins>简短明快，明白易懂</ins>。会议发言如“<em>XXX在XX会议上的发言</em>”
+                “<em>XXX关于XX的发言</em>”）</i>
+            <br />
+            <i style="display: block;"><ins>称谓：（第二行顶格写</ins>，内容写“各位XXX，XXX：” 等）</i>
+            <p><ins>大家好！</ins>（问候语要有）</p>
+            <br>
+            <p><ins>我是</ins>XXX单位的XXX。今天，<ins>我演讲的题目是</ins>《XXXXXXX》（<em>自我介绍仅限于专题演讲用，也可以不写，直接写开头语</em>。<ins>应聘、面试演讲一般要写</ins>
+                “<ins>我是来自XX学校的XX专业XX班的XX，我应聘（面试）的是XXX一职。</ins>”）</p>
+            <br>
+            <p>开头语（专题演讲开头方法有：第一种与会议发言相同，第二种<ins>故事引入</ins>，第三种描<ins>写情境、抒发情感</ins>，第四种<ins>名言引入，如“XXX曾说 XXXXXXX。”</ins>
+                会议发言一般方法有；第一种<em>开门见山，揭示主题</em>：第二种<em>说明情况，介绍背景</em>；第三种<ins>提出问题，引起注意</ins>；第四种<ins>发言心情，如“
+                    在XXX，作为XXXXXX，我感到XXXXXXX。”</ins>）</p>
+            <br>
+            <p>主体：（专题演讲在这一部分要时时注意扣题，否则给人偏离主题的感觉。第一，<ins>确立结构。有总分、并列、对照、递进</ins>，可以从“<em>是什么”
+                、 “为什么” 、“怎么样” 这几方面确立论述角度</em>。第二，<ins>组织材料</ins>。必须紧紧围绕观点选择合适的典型材料，不能材料与主题不一致。<em>不仅有实例，
+                    还有对实例的分析</em>，例“<ins>事例材料 + 观点</ins>”。底单，语言。方法一：<ins>使用恰当的修辞手法</ins>，如
+                排比、比喻、拟人、设问、反问、对偶等；方法二：<ins>避免使用长句，多用短句</ins>。如将<em></em>“定+主语+状语+谓语+定语+宾语。”
+                改成“状语，定语+主语，谓语+定语+宾语。”</em>第三：<ins>多用口语，少用书面语。</ins>不是不用书面语，只是<em>相对其他写作而言</em>。）</p>
+            <br>
+            <p>结尾（演讲稿的结尾没有固定的格式。方法一：<em>对演讲全文要点进行简单小结</em>。方法二：<em>以号召性、鼓动性的话收尾</em>。方法三：<em>以诗文名言以及幽默俏皮的话结尾</em>。
+                但一般原则是要给听众留下深刻的印象。方法有<ins>引导式，希望式，感慨式和抒情式</ins>。）</p>
+            <br>
+            <p>结束语（写法：第一种<ins>再次归纳中心，强调观点</ins>。第二种<ins>提出解决问题的办法</ins>。第三种<ins>发出号召</ins>，如“XXXXX，让我们 XXXXXXXXXXXXXX！”
+                第四种<ins>表达祝福愿望</ins>，。<em>应聘（面试）为“我非常喜欢 XXX 工作，如果能给我这个锻炼的机会，我一定会竭尽全力做好工作！”</em>）</p>
+            <br>
+            <p><ins>我的演讲完毕，谢谢大家！</ins></p>
+            <s>演讲人（发言人）：XXX</s>
+            <s>X年X月X日</s>
+        </div>
+
+        <div class="list">
+            <h3>1.演讲稿模板(笔记):</h3>
+            <font>标题（以主题为标题，在...的讲话）</font>
+            <i>称谓：（各位...）</i>
+            <p>大家好！</p>
+            <p>我是...，我演讲的题目是《XXX》（自我介绍 及 标题）</p>
+            <p>主体（因果叙议，分层）（做法（修辞，语言美））</p>
+            <p>结束语</p>
+            <p>我的演讲完毕，谢谢大家！</p>
+            <s>演讲人（发言人）：XXX</s>
+            <s>X年X月X日</s>
+        </div>
+        <div class="list">
+            <h3><ins style="color:red">1.演讲稿模板(笔记2):</ins></h3>
+            <font>主题</font>
+            <i>称呼:</i>
+            <p>大家好！我是XXX,今天我要演讲的题目是《XXX》</p>
+            <p>首先是什么</p>
+            <p>其次，为什么要这样说</p>
+            <p>1.</p>
+            <p>2.</p>
+            <p>3.</p>
+            <p>再次我们应该怎么做</p>
+            <p>最后鼓舞人心的话</p>
+            <s>谢谢大家，我的演讲结束</s>
+            <s>XXX</s>
+            <s>X年X月X日</s>
+        </div>
+
+    </div>
+    <!-- <ul>
+        <li>
+            <img src="./img/screenShots01.png" alt="">
+        </li>
+        <li>
+            <img src="./img/screenShots02.png" alt="">
+        </li>
+        <li>
+            <img src="./img/screenShots03.png" alt="">
+        </li>
+    </ul> -->
+    <button id="btn">显示更多(useless)</button>
+    <footer id="ic"></footer>
+    <div id="atLast" style="
+    position: absolute;
+    left: 70%;;
+    bottom: 2%;
+    transition: all 0.4s;
+    ">
+        <a href="javascript:;" style="cursor: default;color: black;">by:</a> <a href="http://res1433223.net3v.net/"
+            style="cursor: pointer;color: rgb(36, 18, 240);">http://res1433223.net3v.net/</a>
+        <div>
+            <a href="http://res1433223.net3v.net/HTML/about.htm" style="cursor: pointer;color: rgb(36, 18, 240);">关于</a>
+            <a href="javascript:;" style="cursor: default;color: black;"">/</a>
+            <a href=" http://res1433223.net3v.net/HTML/Good%20guy.htm"
+                style="cursor: pointer;color: rgb(36, 18, 240);">赞助我</a>
+        </div>
+    </div>
+    <script src="../../../../../js/canvas/spider_web.js"></script>
+    <script>
+        (function () {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                document.body.style.fontSize = "8px";
+                document.body.style.transform = 'scale(0.96)';
+            } else {
+                document.body.style.fontSize = "32px";
+            }
+        }())
+        var btn = document.getElementById('btn');
+        var ic = document.getElementById('ic');
+
+        btn.addEventListener('click', function () {
+            btn.remove();
+            ic.innerHTML =
+                '<ul> <li> <!-- <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots01.png" alt=""> --> <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots01.svg" alt=""> </li> <li> <!-- <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots02.png" alt=""> --> <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots02.svg" alt=""> </li> <li> <!-- <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots03.png" alt=""> --> <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots03.svg" alt=""> </li> </ul> <ul> <li> <!-- <img src="./img/screenShots04.png" alt=""> --> <!-- <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots04.png" alt=""> --> <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots04.svg" alt=""> </li> <li> <!-- <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots05.png" alt=""> --> <img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots05.svg" alt=""> </li> </ul> <ul> <!-- <li><img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/screenShots06.png" alt=""></li> --> <li><img src="http://res1433223.net3v.net/HTML/notes/main/Chinese/html/img/svg/screenShots06.svg" alt=""></li> </ul>';
+        })
+        // var fontSize = prompt("(输入数字)font-size: ");
+        // var fontSze = '1px';
+        // document.body.style.fontSize = fontSze;
+        // document.getElementsByClassName('*').style.fontSize = fontSze + "px";
+        window.onload = function () {
+            scrollX
+        }
+        setTimeout(function () {
+            document.getElementById('version').style;
+            document.getElementById('tip').style.color = 'transparent';
+            setTimeout(function () {
+                setTimeout(function () {
+                    document.getElementById('tip').remove();
+
+                    setTimeout(function () {
+                        document.getElementById("atLast").remove()
+
+                        setTimeout(function () {
+                            document.getElementById("key").style.color =
+                                'black';
+
+                            setTimeout(function () {
+                                document.getElementById("key").style
+                                    .color = 'transparent';
+                            }, 4000)
+
+                        }, 100)
+
+                    }, 640);
+
+                }, 100)
+
+                document.getElementById('version').style.left = '100%';
+
+            }, 260);
+        }, 1600);
+
+
+        var timer = null;
+        window.onscroll = function () {
+            var scroll_top = document.documentElement.scrollTop || document.body.scrollTop;
+            var scroll_height = document.body.scrollHeight; //页高
+            document.addEventListener('keyup', function (e) {
+                console.log(e.keyCode);
+                if (e.keyCode === 84) {
+                    clearInterval(timer)
+                    timer = setInterval(function () {
+                        var speed = (0 - scroll_top) / 8;
+                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                        scroll_top = scroll_top + speed;
+                        console.log(scroll_top)
+                        document.documentElement.scrollTop = scroll_top;
+                        if (scroll_top <= 0) {
+                            clearInterval(timer)
+                        }
+                    }, 20)
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

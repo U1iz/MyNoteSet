@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向量</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css">
+    <link rel="stylesheet" href="./css/main_style.css">
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">平面向量</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.基本</a></li>
+            <li><a href="javascript:;" id="option2">2.计算</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">基本</h1>
+            <div>
+                <h6>单位向量
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F/3447768?fr=aladdin');"
+                        onmouseover="this.style.letterSpacing='1rem';" onmouseout="this.style.letterSpacing='0.2rem';"
+                        style="
+                    position: absolute;
+                    cursor: pointer;
+                    left: calc(70% - 4rem);
+                    top: 0.3rem;
+                    transition: all 0.3s;">
+                        Baidu
+                    </i>
+                    <i onclick="window.open('https://zhidao.baidu.com/question/680275072088502652.html');"
+                        onmouseover="this.style.letterSpacing='1rem';" onmouseout="this.style.letterSpacing='0.2rem';"
+                        style="
+                        position: absolute;
+                        cursor: pointer;
+                        left: calc(70% + 7.2rem);
+                        top: 0.3rem;
+                        transition: all 0.3s;">
+                        知道
+                    </i>
+                </h6>
+                <h4>单位向量是指 <b>模等于1的向量。</b> 由于是非零向量，单位向量 <b>具有确定的方向</b> 。单位向量有 <b>无数个</b> 。</h4>
+                <h2 style="margin-bottom: 0.6rem;">一个非零向量除以它的模，可得所需单位向量。</h2>
+                <h4>设向量 <b><ins class="sp1">AB</ins></b></h4>
+                <h2><i>单位向量:</i> <ins>a</ins>₀ = <ins>a</ins>/|<ins>a</ins>|</h2>
+                <h2><i>单位向量:</i> <img src="source/svg_vector/01_2.svg" alt="" class="svg" style="width: 8rem"></hh2>
+            </div>
+            <div>
+                <h6>向量的表示方式
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://zhidao.baidu.com/question/1497373623333305019.html');"
+                        onmouseover="this.style.letterSpacing='1rem';" onmouseout="this.style.letterSpacing='0.2rem';"
+                        style="
+                    position: absolute;
+                    cursor: pointer;
+                    left: calc(70% - 4rem);
+                    top: 0.3rem;
+                    transition: all 0.3s;">
+                        知道
+                    </i>
+                    <i onclick="window.open('http://www.gaosan.com/gaokao/391509.html');"
+                        onmouseover="this.style.letterSpacing='1rem';" onmouseout="this.style.letterSpacing='0.2rem';"
+                        style="
+                        position: absolute;
+                        cursor: pointer;
+                        left: calc(70% + 7.2rem);
+                        top: 0.3rem;
+                        transition: all 0.3s;">
+                        else
+                    </i>
+                </h6>
+                <h2 style="margin-bottom: 0.6rem;margin-top: 0.6rem;"><i>分解形式:</i> <ins class="sp1">op</ins> = x<ins>i</ins> +
+                    y<ins>j</ins></h2>
+                <h2><i>坐标形式:</i> <ins class="sp1">op</ins> = (x, y)</h2>
+            </div>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">计算</h1>
+            <div>
+                <h6>向量的计算
+                    <i 
+                    onclick="window.navigate('http://res1433223.net3v.net/HTML/dig.htm')";
+                        onmouseover="this.style.letterSpacing='1rem';" onmouseout="this.style.letterSpacing='0.2rem';"
+                        style="
+                        position: absolute;
+                        cursor: pointer;
+                        left: calc(70% + 7.2rem);
+                        top: 0.3rem;
+                        transition: all 0.3s;">
+                        挖坑
+                    </i>
+                </h6>
+                <!-- https://blog.csdn.net/g21glf/article/details/80904435 -->
+            </div>
+        </div>
+    </div>
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+
+        disBlock(o1, box1, box2);
+        disBlock(o2, box2, box1);
+
+    </script>
+</body>
+
+</html>

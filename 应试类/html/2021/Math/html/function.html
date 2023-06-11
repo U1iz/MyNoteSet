@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <!-- <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css"> -->
+    <link rel="stylesheet" href="./css/main_style.css">
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">函数</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.单调性/奇偶性</a></li>
+            <li><a href="javascript:;" id="option2">2.幂函数</a></li>
+            <li><a href="javascript:;" id="option3">3.对数函数</a></li>
+            <li><a href="javascript:;" id="option4">4.指数函数</a></li>
+            <li><a href="javascript:;" id="option5">5.三角函数</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">单调性/奇偶性</h1>
+            <div>
+                <h6>单调性
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%8D%95%E8%B0%83%E6%80%A7/6194133?fr=aladdin');" class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+            </div>
+            <div>
+                <h6>奇函数
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%A5%87%E5%87%BD%E6%95%B0/107092?fr=aladdin');" class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+            </div>
+            <div>
+                <h6>偶函数
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%81%B6%E5%87%BD%E6%95%B0');" class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+            </div>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">幂函数</h1>
+            <div>
+                <h6>幂函数
+                    <i onclick="window.open('');" class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+                <h2>y = xᵅ (α ∈ R)</h2>
+                <h3>幂函数只能是 y = xᵅ , (y = axᵅ & y = xᵅ + a 都不是幂函数)</h3>
+                <h2><a href="source/htm/miFunc/miFunc.htm" target="_blank">幂函数知识点归纳1</a></h2>
+                <h2><a href="source/htm/miFunc/miFunc2.htm" target="_blank">幂函数知识点归纳1</a></h2>
+            </div>
+        </div>
+        <div id="box3">
+            <h1 style="text-align: center">对数函数</h1>
+            <div>
+                <h6>对数函数
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0');" class="lnk">
+                        Baidu
+                    </i>
+
+                    <h2>幂指数函数必过(0,1)</h2>
+                </h6>
+            </div>
+        </div>
+        <div id="box4">
+            <h1 style="text-align: center">指数函数</h1>
+            <h6>指数函数
+                <i onclick="window.open('https://baike.baidu.com/item/%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/6013301?fr=aladdin');" class="lnk">
+                    Baidu
+                </i>
+            </h6>
+        </div>
+        <div id="box5">
+            <h1 style="text-align: center">三角函数</h1>
+            <div>
+                <h6>三角函数
+                    <i onclick="window.open('https://baike.baidu.com/item/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/1652457');" class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+            </div>
+        </div>
+    </div>
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+        var o3 = document.getElementById('option3');
+        var box3 = document.getElementById("box3");
+        var o4 = document.getElementById('option4');
+        var box4 = document.getElementById("box4");
+        var o5 = document.getElementById('option5');
+        var box5 = document.getElementById("box5");
+
+        disBlock(o1, box1, box2, box3, box4, box5);
+        disBlock(o2, box2, box1, box3, box4, box5);
+        disBlock(o3, box3, box1, box2, box4, box5);
+        disBlock(o4, box4, box1, box2, box3, box5);
+        disBlock(o5, box5, box1, box2, box3, box4);
+    </script>
+</body>
+
+</html>

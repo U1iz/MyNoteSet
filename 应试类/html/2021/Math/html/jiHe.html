@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css">
+    <link rel="stylesheet" href="./css/main_style.css">
+    <style>
+        h3 {
+            text-indent: 2.4rem;
+            font-weight: 400;
+            color: rgb(28, 3, 117);
+        }
+
+        strong {
+            color: rgb(179, 23, 226);
+            background-color: rgba(255, 0, 0, 0.178)
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">集合</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.数集</a></li>
+            <li><a href="javascript:;" id="option2">2.集合的包含</a></li>
+            <li><a href="javascript:;" id="option3">3.集合的运算</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">数集</h1>
+            <!-- 自然数 N -->
+            <div>
+                <h6>自然数 N <i>(Natural number)</i></h6>
+                <h2>[0, +∞) ∈ N <s>{x| x >= 0 , x ∈ Z}</s></h2>
+                <h3>自然数: 0和正整数</h3>
+                <h2>[1, +∞) ∈ N+ <s>{x| x >= 1 , x ∈ Z}</s></h2>
+                <h3>非零自然数: 所有正整数</h3>
+            </div>
+            <!-- 整数 Z -->
+            <div>
+                <h6>整数 Z <i>(英: <a class="normal" target="_blank" style="color:rgb(250, 137, 61) !important"
+                            href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&ch=&tn=62095104_35_oem_dg&bar=&wd=integer&oq=%25E6%259C%2589%25E7%2590%2586%25E6%2595%25B0%2520%25E9%259B%2586%25E8%258B%25B1%25E8%25AF%25AD&rsv_pq=a0bf7d7b00081d08&rsv_t=35deweRgO3QxWNm9vv8WOwQFXas0DRO4Qu885j9wk9bLVKfoEBR4bOm%2F8oJakWbDdE%2B82kHO7oqm&rqlang=cn&rsv_enter=1&rsv_btype=t&prefixsug=integer&rsp=1&rsv_dl=tb&inputT=1089">integer</a>,
+                        德: <a class="normal" target="_blank" style="color:rgb(250, 137, 61) !important"
+                            href="https://www.baidu.com/s?ie=UTF-8&wd=Zahlen&tn=62095104_35_oem_dg">Zahlen</a>)</i></h6>
+                <h2>Z, Z+ 略</h2>
+            </div>
+            <!-- 有理数集 Q -->
+            <!-- 由来 由于两个数相比的结果(商)叫做有理数，商英文是quotient，所以就用Q了 -->
+            <div>
+                <h6>有理数 Q <i>(<a class="normal" target="_blank" style="color:rgb(250, 137, 61) !important"
+                            href="https://www.baidu.com/s?ie=UTF-8&wd=quotient&tn=62095104_35_oem_dg">quotient</a> 译:
+                        商)</i></h6>
+                <h2><s>分数是有理数</s></h2>
+            </div>
+            <!-- 实数集 R -->
+            <div>
+                <h6>实数 R <i>(Real number)</i></h6>
+                <h2><s>所有有理数和无理数，可以是整数、负数或零。
+
+                        <del>包括代数数与超越数。</del></s></h2>
+            </div>
+            <!-- 复数 C -->
+            <div>
+                <h6>复数 C <i>(<a class="normal" target="_blank" style="color:rgb(250, 137, 61) !important"
+                            href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&ch=&tn=62095104_35_oem_dg&bar=&wd=Complex&oq=Zahlen&rsv_pq=a9c72a3e0003178e&rsv_t=0e8aGMwLYWGbYZNErQjUI%2BpynXQA8F3C%2B1cSab3F4W837aw2dl06aTjpBsQiv5S8OwskIQjMaufL&rqlang=cn&rsv_enter=1&rsv_btype=t&rsv_dl=tb&inputT=NaN">Complex</a>
+                        number)</i></h6>
+                <h2>实数与虚数的结合，格式是 a + bi，其中 a 和 b 是实数， i 是虚数</h2>
+            </div>
+            <!-- 代数数 A -->
+            <div>
+                <h6>代数数 A</h6>
+            </div>
+            <!-- 空集 ∅ -->
+            <div>
+                <h6>空集 ∅</h6>
+            </div>
+            <div style="border: none" class="img">
+                <img style="width: 60% ! important" src="./img/数集.jpg" alt="">
+            </div>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">集合的包含</h1>
+            <div>
+                <!-- ⊆⊇ -->
+                <h6>子集 ⊆⊇</h6>
+                <h3>
+                    一般地，对于两个集合A 和B，如果<strong>集合A 中的任何一个元素都属于集合B</strong>，那么<strong>集合A
+                        叫做集合B的子集</strong>，记作 <strong>A ⊇ B</strong> 或 <strong>B ⊆ A</strong>
+                    ，读作<strong>“A包含于B”</strong> 或 <strong>“B包含A”</strong>
+                </h3>
+                <!-- ⊊ ⊋ -->
+                <h6>真子集 ⫋ (⊊ ⊋)</h6>
+                <h3>一般地，对于两个集合A 和B，如果<strong>A ⊆ B</strong>，<strong>并且B中至少有一个元素不属于A</strong>，
+                    <strong>那么集合A叫做集合B的真子集</strong>；记作
+                    <strong>A ⊊ B</strong> 或 <strong>B ⊋ A</strong>，读作<strong>“A 真包含于 B”</strong> 或
+                    <strong>“B 真包含于 A”</strong>
+                </h3>
+            </div>
+        </div>
+        <div id="box3">
+            <h1 style="text-align: center">集合的运算</h1>
+            <h4>目前还不是考点就先不做了</h4>
+        </div>
+    </div>
+    <img style="width: 100% !important;" src="http://res1433223.net3v.net/HTML/notes/main/Math/html/img/book/1.jpg"
+        alt="">
+    <img style="width: 100% !important;" src="http://res1433223.net3v.net/HTML/notes/main/Math/html/img/book/2.jpg"
+        alt="">
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+        var o3 = document.getElementById('option3');
+        var box3 = document.getElementById("box3");
+
+        disBlock(o1, box1, box2, box3);
+        disBlock(o2, box2, box1, box3);
+        disBlock(o3, box2, box1, box2);
+
+    </script>
+</body>
+
+</html>

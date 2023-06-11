@@ -1,0 +1,153 @@
+/* rgb(130, 215, 208) */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    cursor: default;
+}
+
+html {
+    font-size: 50px;
+    overflow-x: hidden;
+}
+
+main {
+    position: fixed;
+    /* 3D属性 */
+    /* 开启3D空间 */
+    transform-style: preserve-3d;
+    perspective: 6rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 36, 36);
+    transition: all 0.6s;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+}
+
+h1 {
+    font: 800 1rem "MicroSoft YaHei";
+}
+
+h2 {
+    font: 600 0.6rem "MicroSoft YaHei";
+}
+
+h3 {
+    font: 600 0.5rem "MicroSoft YaHei";
+}
+
+h4 {
+    font: 600 0.4rem "MicroSoft YaHei";
+}
+
+h5 {
+    font: 600 0.3rem "MicroSoft YaHei";
+}
+
+h6 {
+    font: 600 0.2rem "MicroSoft YaHei";
+}
+
+a {
+    cursor: pointer;
+}
+
+.content {
+    position: absolute;
+    left: calc(50% - 6rem);
+    top: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 12rem;
+    height: 12rem;
+    margin: 2rem auto;
+    /* background-color: rgb(215, 161, 130); */
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 0px 0px rgba(130, 215, 208, 0);
+    border-radius: 16px;
+    backdrop-filter: blur(2px);
+    /* 视距, 通过设置视距距离，让其子元素能被观察起来 */
+    perspective: 12rem;
+    -webkit-perspective: 600;
+    transition: all 0.3s;
+}
+
+.content:hover {
+    backdrop-filter: blur(12px);
+    box-shadow: 2px 2px 24px 2px rgba(130, 215, 208, 1);
+    transform: translateZ(0.32rem);
+}
+
+.item {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0px;
+    background-color: rgb(130, 215, 208);
+    transition: all 0.3s;
+}
+
+.item:hover {
+    backdrop-filter: blur(12px);
+    letter-spacing: 0.1rem;
+    box-shadow: 2px 2px 24px 2px rgba(146, 130, 215, 0.836);
+    transform: translateZ(2rem);
+    border-radius: 32%;
+    background-color: rgba(86, 31, 187, 0.6);
+}
+
+.main_title {
+    position: absolute;
+    left: 100%;
+    text-align: center;
+    width: 100%;
+    top: 0.1rem;
+    color: #666;
+    z-index: 2;
+    transition: all 0.7s;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(130, 215, 208), rgb(156, 130, 215));
+    transition: all 0.6s;
+}
+
+.about,
+.friendLink {
+    position: absolute;
+    z-index: 1;
+}
+
+.friendLink {
+    right: 0.2rem;
+    bottom: 0.2rem;
+}
+
+.about {
+    color: #666;
+}
