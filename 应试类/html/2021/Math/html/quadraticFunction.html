@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直线方程与圆方程</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <!-- <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css"> -->
+    <link rel="stylesheet" href="./css/main_style.css">
+    <style>
+        i::selection {
+            background-color: snow;
+            color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">直线方程与圆方程</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="all">全部</a></li>
+            <li><a href="javascript:;" id="option1">1.圆方程</a></li>
+            <li><a href="javascript:;" id="option2">2.直线方程</a></li>
+            <li><a href="javascript:;" id="option3">3.各种距离</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">圆方程</h1>
+            <div>
+                <h6>圆的标准方程
+                    &nbsp;&nbsp;&nbsp;b
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%9C%86%E7%9A%84%E6%A0%87%E5%87%86%E6%96%B9%E7%A8%8B/3723940?fr=aladdin');"
+                        class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+                <h2><i>圆的标准方程:</i> (x-a)²+(y-b)² = r²</h2>
+                <h2><i>圆的标准方程:</i></h2><img src="./source/svg/svg07.svg" alt="" class="svg" style="width: 24rem;">
+                <h2><i>坐标:</i> (a,b)</h2>
+                <h2><i>半径:</i> r</h2>
+            </div>
+            <div>
+                <h6>圆的一般方程
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://baike.baidu.com/item/%E5%9C%86%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E7%A8%8B/338484');"
+                        class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+                <h2><i>圆的一般方程(1):</i> x²+y²+Dx+Ey+F = 0 <s>(D²+E²-4F > 0)</s></h2>
+                <h2 style="margin-bottom: 1rem;"><i>圆的一般方程(1):</i>
+                </h2><img src="./source/svg/svg08.svg" alt="" class="svg" style="width: 24rem">
+                <h2><i>圆的一般方程(2):</i> (X+D/2)²+(Y+E/2)² = (D²+E²-4F) / 4</h2>
+                <h2><i>圆的一般方程(2):</i></h2><img src="./source/svg/svg09.svg" alt="" class="svg" style="width: 24rem">
+                <h4>当 <b>D²+E²-4F &gt; 0</b> 时:</h4>
+                <h2><i style="cursor: pointer;" onclick="window.open('./source/svg/svg10.svg')">圆心:</i> (-D/2,-E/2)</h2>
+                <h2 style="margin-bottom: 1rem;"><i style="cursor: pointer;"
+                        onclick="window.open('./source/svg/svg11.svg')">半径:</i> 1/2 * √D²+E²-4F</h2>
+
+                <h4>当 <b>D²+E²-4F = 0</b> 时:</h4>
+                <h2 style="margin-bottom: 1rem;">一般方程仅表示一个点 <b>(-D/2,-E/2)</b> ，叫做 <b>点圆(半径为零的圆)</b></h2>
+
+                <h4>当<b>D²+E²-4F &lt; 0</b> 时:</h4>
+                <h2>没有一个点的坐标满足圆的一般方程，即一般方程不表示任何图形，叫做 <b>虚圆</b></h2>
+            </div>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">直线方程</h1>
+            <div>
+                <h6>斜率 (k)
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://baike.baidu.com/item/%E6%96%9C%E7%8E%87/4914111?fr=aladdin');"
+                        class="lnk">
+                        Baidu
+                    </i>
+                </h6>
+                <h2><i>斜率公式: </i>k = tanα <s>(α ≠ π/2)</s></h2>
+                <h2><i>斜率公式:</i>k = (y₂-y₁) / (x₂-x₁) <s>(x₁ ≠ x₂)</s></h2>
+                <h4>设直线方程 <b>Ax + By + C = 0</b> </h4>
+                <h2 style="margin-bottom: 1rem;
+                "><i>斜率公式:</i> k = -(A/B)</h2>
+                <h4>设 y = k₁*x+b 和 y = k₂*x + b 若斜率存在， <b>k₁ = k₂</b> 则两直线 <b>平行</b></h4>
+                <h4>设 y = k₁*x+b 和 y = k₂*x + b 若斜率存在， <b>k₁*k₂ = -1</b> 则两直线 <b>垂直</b></h4>
+            </div>
+            <div>
+                <h1 style="text-align:center;">直线方程公式</h1>
+                <div>
+                    <h6>点斜式
+                        &nbsp;&nbsp;&nbsp;
+                        <i onclick="window.open('https://baike.baidu.com/item/%E7%82%B9%E6%96%9C%E5%BC%8F/921468?fr=aladdin');"
+                            onmouseover="this.style.letterSpacing='1rem';"
+                            onmouseout="this.style.letterSpacing='0.2rem';" class="lnk">
+                            Baidu
+                        </i>
+                    </h6>
+                    <h4><b>已知直线上一点(a,b)</b> 并且 <b>斜率为 k</b> 则方程为:</h4>
+                    <h2><i>点斜式:</i> y-b = k(x-a)</h2>
+                </div>
+                <div>
+                    <h6>斜截式</h6>
+                    <h2><i>斜截式:</i> y = kx + b</h2>
+                </div>
+                <div>
+                    <h6>一般式
+                        &nbsp;&nbsp;&nbsp;
+                        <i onclick="window.open('https://baike.baidu.com/item/%E4%B8%80%E8%88%AC%E5%BC%8F/7723095?fr=aladdin');"
+                            class="lnk">
+                            Baidu
+                        </i>
+                    </h6>
+                    <h2><i>一般式:</i> Ax + By + C = 0</h2>
+                    <h2 style="margin-bottom: 1rem;"><i>斜率:</i></h2>
+                    <img src="source/svg/svg05.svg" alt="" style="width: 6.4rem" class="svg" title="斜率公式">
+                    <hr>
+                    <h2><i>截距:</i></h2>
+                    <img src="source/svg/svg05_5.svg" alt="" style="width: 6.4rem" class="svg" title="截距公式">
+                </div>
+            </div>
+        </div>
+        <div id="box3">
+            <h1 style="text-align: center">各种距离</h1>
+            <div>
+                <h6>两平行线间距离
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://baike.baidu.com/item/%E7%82%B9%E5%88%B0%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB/8673346?fr=aladdin');"
+                        class="lnk">
+                        Baidu
+                    </i>
+                    <i onclick="window.open('https://zhidao.baidu.com/question/214950331.html');" class="lnk2">
+                        知道
+                    </i>
+                </h6>
+                <h4>设两平行线方程分别为： <b>Ax+By+a=0</b> ，<b>Ax+By+b=0</b> 则他们之间的距离</h4>
+                <h2>d=|a-b| / √(A²+B²）</h2>
+                <h2><i>两平行线间距离:</i> d = |c₁-c₂| / √(A²+B²)</h2>
+            </div>
+            <div>
+                <h6>点到直线距离
+                    &nbsp;&nbsp;&nbsp;
+                    <i onclick="window.open('https://baike.baidu.com/item/%E7%82%B9%E5%88%B0%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB/8673346?fr=aladdin');"
+                        class="lnk">
+                        Baidu
+                    </i>
+                    <i onclick="window.open('https://zhuanlan.zhihu.com/p/26307123');" class="lnk2">
+                        知乎
+                    </i>
+                </h6>
+                <h4>设直线 <b>L</b> 的方程为 <b>Ax+By+C=0</b> ，点 <b>P</b> 的坐标为 <b>（x₀,y₀）</b> ，则点 <b>P</b> 到直线 <b>L</b> 的距离为：
+                </h4>
+                <h2><i>点到直线距离公式(1):</i> &nbsp;|A*x₀ + B*y₀ + C| / √A² + B²</h2>
+                <h2><i>点到直线距离公式(1):</i>
+                </h2>
+                <img class="svg" src="./source/svg/svg01.svg" alt="" style="width:20rem" title="点到直线距离公式(1)">
+                <h4>同理可知，当 <b>P（x₀,y₀）</b> ，直线 <b>L</b> 的解析式为 <b>y=kx+b</b> 时，则点 <b>P</b> 到直线 <b>L</b> 的距离为:</h4>
+                <h2>
+                    <i>点到直线距离公式(2):</i> &nbsp;|k*x₀ - y₀ + b| / √k² + 1
+                </h2>
+                <h2>
+                    <i>点到直线距离公式(2):</i>
+                </h2>
+                <img class="svg" src="./source/svg/svg02.svg" alt="" style="width:20rem" title="点到直线距离公式(2)">
+            </div>
+            <div>
+                <h6>两点之间的距离</h6>
+                <h4>设两个点 <b>A</b> 、 <b>b</b> 以及坐标分别为 <b>A(x₁, y₁)</b> 、 <b>B(x₂,y₂)</b> ，则 <b>A</b> 和 <b>B</b> 两点之间的距离为：
+                </h4>
+                <h2><i>两点之间距离公式:</i> &nbsp;|AB| = √(x₁-x₂)² + (y₁-y₂)²</h2>
+                <h2>
+                    <i>两点之间距离公式:</i>
+                </h2>
+                <img class="svg" src="./source/svg/svg03.svg" alt="" style="width:20rem" title="两点之间距离公式">
+            </div>
+            <div>
+                <h6>中点公式</h6>
+                <h2>P( (x₁+x₂)/2, (y₁+y₂)/2 )</h2>
+                <h2>
+                    <i>中点公式:</i>
+                </h2>
+                <img src="./source/svg/svg04.svg" alt="" class="svg" style="width:20rem" title="中点公式">
+            </div>
+        </div>
+    </div>
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+        var o3 = document.getElementById('option3');
+        var box3 = document.getElementById("box3");
+
+        disBlock(o1, box1, box2, box3);
+        disBlock(o2, box2, box1, box3);
+        disBlock(o3, box3, box2, box1);
+
+        fill(document.getElementById('all'), box1, box2, box3);
+    </script>
+</body>
+
+</html>

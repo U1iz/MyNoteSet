@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <link rel="shortcut icon" href="../../../../img/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 24px;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.3);
+            /* overflow-y: hidden; */
+            overflow-x: hidden;
+        }
+
+        ul,
+        li {
+            position: relative;
+        }
+
+        ul {
+            width: 70%;
+            height: 60%;
+            margin: 0.8rem auto;
+            text-align: center;
+            box-shadow: -4px 4px 6px .1px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        ul:hover {
+            box-shadow: 6px 6px 16px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        li {
+            text-align: center;
+            list-style-type: none;
+            cursor: pointer;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        li h1 {
+            font: 800 1.5/1.6rem "microsoft yaHei";
+        }
+
+        ul li {
+            position: relative;
+            left: 0;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+            transition: all 0.3s;
+        }
+
+        ul li:nth-child(2n - 1):hover {
+            left: -2.4rem;
+            /* border: 0.1rem solid rgba(0, 0, 0, .4); */
+            box-shadow: -6px -6px 16px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        ul li:nth-child(2n):hover {
+            left: 2.4rem;
+            /* border: 0.1rem solid rgba(0, 0, 0, .4); */
+            box-shadow: 6px 6px 16px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        ul li:nth-child(n):hover {
+            box-sizing: border-box;
+            left: 2.4rem;
+            /* border: 0.1rem solid rgba(0, 0, 0, .4); */
+            box-shadow: 6px 6px 16px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <script>
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+        window.addEventListener('DOMContentLoaded', function () {
+            var lis = document.getElementById('content').querySelectorAll('li');
+
+            function newTab(e, location) {
+                e.flag = 0;
+                e.onclick = function () {
+                    if (location == 'javascript:;') {
+                    } else {
+                        if (equipmentPC) {
+                            e.tab = window.open(location, '', 'height=525px,width=611,scrollbars=yes,status=yes');
+                            e.flag++;
+                            console.log(e.tab == null);
+                            console.log(e.flag);
+                            if (e.flag >= 2) {
+                                e.flag--;
+                                (e.tab).close();
+                                console.log(e.flag);
+                            }
+                        } else {
+                            e.tab = window.open(location, '', 'height=525px,width=611,scrollbars=yes,status=yes');
+                        }
+                    }
+                }
+            };
+            for (var i = 0; i < lis.length; i++) {
+                var tab;
+                switch (i) {
+                    case 0:
+                        // tabClose()
+                        tab = 'html/solidGeometry.html';
+                        break;
+                    case 1:
+                        tab = 'html/quadraticFunction.html';
+                        break;
+                    case 2:
+                        tab = 'html/imaginaryNumber.html';
+                        break;
+                    case 3:
+                        tab = 'html/shuLie.html';
+                        break;
+                    case 4:
+                        tab = 'html/vector.html';
+                        break;
+                    case 5:
+                        tab = 'html/jiHe.html';
+                        break;
+                    case 6:
+                        tab = 'html/PAndC.html';
+                        break;
+                    case 7:
+                        tab = 'html/function.html';
+                        break;
+                    case lis.length - 1:
+                        tab = 'javascript:;';
+                        break;
+                }
+                newTab(lis[i], tab);
+            }
+        })
+    </script>
+    <style>
+        aside,
+        span {
+            cursor: default;
+        }
+
+        aside,
+        footer {
+            position: absolute;
+            bottom: 0;
+        }
+
+        aside {
+            position: absolute;
+            right: 0;
+            font: 400 0.6rem 'microsoft yaHei' !important;
+        }
+
+        footer {
+            display: block;
+            text-align: center;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font: 400 0.8rem 'microsoft yaHei' !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var span = document.getElementsByTagName('span');
+        var aside = document.getElementsByTagName('aside');
+        var footer = document.getElementsByTagName('footer');
+        setTimeout(function () {
+            footer[0].style.display = 'none';
+            span[0].style.color = 'transparent';
+        }, 12000);
+    </script>
+    <aside style="position: absolute">资料由百度网友和好友 <strong>徐yy</strong> 提供，网页设计及资料整合by: <strong>yzl</strong></aside>
+    <span id="tip">一类窗口只能打开一次，刷新(F5)重置次数</span>
+    <ul id="content">
+        <li id="solidGeometry">
+            <!-- solid geometry -->
+            <h1 id="sGeometry">空间几何<br>(Complete)</h1>
+        </li>
+        <li>
+            <h1 id="function"></h1>
+        </li>
+        <li id="iNum">
+            <!-- imaginary number -->
+            <h1>虚 数</h1>
+        </li>
+        <li>
+            <!-- vector -->
+            <h1 id="arr">数 列<br>(Complete)</h1>
+        </li>
+        <li>
+            <h1>向 量</h1>
+        </li>
+        <li>
+            <h1>集 合</h1>
+        </li>
+        <li>
+            <h1>排列与组合</h1>
+        </li>
+        <li id="eFunction">
+            <!-- quadratic function -->
+            <h1>函 数</h1>
+        </li>
+        <li id="more">
+            <h1>...</h1>
+        </li>
+    </ul>
+    <footer>网址起始页: <a href="http://res1433223.net3v.net" style="text-decoration:none"
+            target="_blank">res1433223.net3v.net</a></footer>
+    <script>
+        var lis = document.getElementById('content').querySelectorAll('li');
+        var contender = document.getElementById('content');
+        var equipmentPC;
+        function phoneFunction() {
+            document.getElementById('tip').remove();
+            document.getElementById('function').innerHTML = '直线方程<br>与<br>圆方程<br>(Complete)';
+            document.getElementById('arr').innerHTML = '数列<br>(Complete)';
+            document.getElementById('sGeometry').innerHTML = '空间几何<br>(Complete)';
+            contender.style.marginTop = '8rem';
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.padding = '8rem auto';
+                console.log(lis[i].style.padding);
+            };
+            equipmentPC = false;
+        }
+        (function () {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                document.documentElement.style.fontSize = '14px';
+                phoneFunction();
+            } else if (bIsIpad) {
+                document.documentElement.style.fontSize = '16px';
+                phoneFunction();
+            } else {
+                document.documentElement.style.fontSize = '24px';
+                document.getElementById('function').innerHTML = '直线方程与圆方程<br>(Complete)';
+                equipmentPC = true;
+            }
+        }());
+
+        var item = document.querySelectorAll('li');
+        var cont = document.getElementById('content');
+        if (equipmentPC) {
+            cont.addEventListener('mouseenter', function () {
+                for (i = 0; i <= item.length - 2; i++) {
+                    item[i].style.borderBottom = "12px solid rgba(0, 0, 0, 0.3)";
+                }
+            });
+            cont.addEventListener('mouseleave', function () {
+                for (i = 0; i < item.length; i++) {
+                    item[i].style.borderBottom = "1px solid rgba(0, 0, 0, 0.3)";
+                }
+            });
+        };
+        for (i = 0; i <= item.length; i++) {
+            item[i].addEventListener('mouseenter', function () {
+                this.style.backgroundColor = "#ccc";
+                this.style.letterSpacing = "0.8rem";
+                this.style.color = "rgba(255, 255, 255, .9)";
+                this.addEventListener('mouseleave', function () {
+                    this.style.color = "black";
+                    this.style.backgroundColor = '#fff';
+                    this.style.letterSpacing = "2px";
+                })
+            })
+        };
+    </script>
+</body>
+
+</html>

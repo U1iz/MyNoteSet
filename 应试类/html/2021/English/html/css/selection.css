@@ -1,0 +1,45 @@
+h1::selection {
+    color: #fff;
+    background-color: #fff;
+}
+
+h2::selection {
+    color: rgb(255, 0, 0);
+    background-color: rgb(230, 226, 248);
+    color: #fff;
+    background-color: #000;
+}
+
+h5::selection {
+    color: #ddd;
+    background-color: rgb(100, 100, 100);
+}
+
+h6::selection {
+    color: chocolate;
+    color: rgb(188, 42, 233);
+    background-color: rgb(154, 235, 228);
+}
+
+s::selection {
+    color: rgb(137, 209, 22);
+    background-color: rgb(230, 215, 240);
+}
+/* 
+i::selection {
+    color: aquamarine;
+    background-color: aqua;
+} */
+.i::selection {
+    color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 76);
+}
+a::selection {
+    color: #000;
+    background-color: transparent;
+}
+
+b::selection {
+    background-color: snow;
+    color: rgb(74, 146, 241);
+}

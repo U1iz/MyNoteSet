@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排列与组合</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css">
+    <link rel="stylesheet" href="./css/main_style.css">
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">排列与组合</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.排列</a></li>
+            <li><a href="javascript:;" id="option2">2.组合</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">排列</h1>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">组合</h1>
+        </div>
+    </div>
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+
+        disBlock(o1, box1, box2);
+        disBlock(o2, box2, box1);
+
+    </script>
+</body>
+
+</html>

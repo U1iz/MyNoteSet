@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数列</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <link rel="stylesheet" href="http://res1433223.net3v.net/HTML/notes/main/Math/html/css/main_style.css">
+    <link rel="stylesheet" href="./css/main_style.css">
+</head>
+
+<body>
+
+    <div>
+        <h1 style="text-align: center;">数列</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.等差数列</a></li>
+            <li><a href="javascript:;" id="option2">2.等比数列</a></li>
+        </ul>
+        <!-- ₙ ₁ ₂ ₃ ≥ ≤ -->
+        <div id="box1">
+            <h1 style="text-align: center">等差数列</h1>
+            <h6>定义</h6>
+            <h5>等差数列的定义： 一般地，如果一个数列从第2项起，每一项与它的前一项的差等于同一个常数，那么这个数列就叫做等差数列，这个常数叫做公差，用符号语言表示为aₙ₊₁ - aₙ = d</h5>
+            <!-- 公差 d -->
+            <h6>公差</h6>
+            <h2>公差: d = (aₙ-a₁)/(n-1) <s>(n ≥ 2，n ∈ Z+)</s></h2>
+            <h2 style="margin-bottom: 1rem;"><del>公差 = (末项 - 首项) ÷（项数-1）</del><s>（其中n大于或等于2，n属于正整数）</s></h2>
+            <!-- 项数 n -->
+            <h6>项数</h6>
+            <h2>项数: n =(aₙ - a₁)/d + 1；</h2>
+            <h2 style="margin-bottom: 1rem;"><del>项数 =（末项-首项）÷ 公差 + 1；</del></h2>
+            <!-- 末项 aₙ -->
+            <h6>末项</h6>
+            <h2>末项: aₙ = a₁ + (n - 1) * d</s></h2>
+            <h2 style="margin-bottom: 1rem;"><del>末项 = 首项 +（项数-1）× 公差</del></h2>
+            <!-- 首项 a₁ -->
+            <h6>首项</h6>
+            <h2>首项: a₁ = aₙ - (n - 1) * d</s></h2>
+            <h2 style="margin-bottom: 1rem;"><del>首项 = 末项 -（项数-1）× 公差</del></h2>
+            <!-- 求和 a₁ -->
+            <h6>求和</h6>
+            <h2>求和: Sₙ = (a₁ + aₙ) * n/2</s></h2>
+            <h2 style="margin-bottom: 1rem;"><del>求和：（首项+末项）× 项数/2</del></h2>
+            <!-- 前n项的和 -->
+
+            <div>
+                <h6>前n项的和</h6>
+                <!-- 1 -->
+                <h2>前n项的和: Sₙ = (a₁ * n ) + [n * (n-1)d] / 2</h2>
+                <div style="border: none" class="img">
+                    <img src="./img/等差数列 @已知首项和公差.png" alt="已知首项和公差" title="已知首项和公差">
+                </div>
+                <h2 style="margin-bottom: 1rem;"><del>前n项的和Sₙ = 首项 × n + （ 项数 x (项数-1）公差）÷ 2 </del><s> （已知首项与公差）</s>
+                </h2>
+
+                <hr>
+                <!-- 2 -->
+                <h2>前n项的和: Sₙ = n(a₁ + aₙ) / 2</h2>
+                <div style="border: none" class="img">
+                    <img src="./img/等差数列 @已知首项和末项.png" alt="已知首项和末项" title="已知首项和末项">
+                </div>
+                <h2 style="margin-bottom: 1rem;"><del>前n项的和Sₙ = 项数 x （首项 + 末项）÷ 2 </del><s> （已知首项与末项）</s></h2>
+            </div>
+            <div>
+                <h6>等差中项</h6>
+                <h2>若a, A, c 成等差数列, 则 A = (a + b) / 2</h2>
+                <h3>当n为偶数时，等差中项为中间两项，这两项的和等于首尾两项和，等于二倍的总和除以项数n</h3>
+                <h3><s>数列为奇数项时: </s> Sₙ = 中间一项×项数</h3>
+                <h2>Sₙ = b * n <s> (中项用b代替)</s></h2>
+                <h3><s>数列为偶数项时: </s> Sₙ = 中间两项和×项数的一半</h3>
+                <h2 style="margin-bottom: 1rem;">Sₙ = (b₁ + b₂) * n/2 <s> (中项用b代替)</s></h2>
+            </div>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">等比数列</h1>
+            <!-- 定义 -->
+            <h6>定义</h6>
+            <h5>等比数列的定义： 一般地，如果一个数列从第2项起，每一项与它的前一项的比等于同一个常数，那么这个数列就叫做等比数列，这个常数叫做公比，用符号语言表示为aₙ₊₁ / aₙ = q</h5>
+            <!-- 通项 -->
+            <h6>通项公式:</h6>
+            <h2>通项 aₙ = a₁ * q⁽ⁿ⁻¹⁾</h2>
+            <h2 style="margin-bottom: 1rem;"><del>通项：末项 = 首项 x 公比的n-1次方</del></h2>
+            <!-- 求和 -->
+            <h6>求和公式</h6>
+            <h2>求和1: Sₙ = a₁(1-qⁿ) / (1-q) <s> (q ≠ 1)</s></h2>
+            <h2><del>求和2: 和 = 首项（1 - 公比的数列项数次方）÷ （1 - 公比）</del></h2>
+            <h2>求和2: Sₙ = (a₁ - aₙ*q) / (1-q) <s> (q ≠ 1)</s></h2>
+            <h2 style="margin-bottom: 1rem;"><del>求和2：和 = （首项 - 末项 x 公比） ÷ （1-公比）</del></h2>
+            <!-- 公比 -->
+            <h6>公比</h6>
+            <h2 style="margin-bottom: 1rem;">q = <!-- aₙ/aₙ₋₁ --> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.255ex; cursor: default;" width="5.385ex" height="5.009ex" viewBox="0 -1186 2318.5 2156.8"><defs><path id="a" stroke-width="1" d="M33 157q0 101 76 192t171 92q51 0 90-49 16 30 46 30 13 0 23-8t10-20q0-13-37-160T374 68q0-25 7-33t21-9q9 1 20 9 21 20 41 96 6 20 10 21 2 1 10 1h4q19 0 19-9 0-6-5-27t-20-54-32-50Q436 0 417-8q-8-2-24-2-34 0-57 15t-30 31l-6 15q-1 1-4-1l-4-4q-59-56-120-56-55 0-97 40T33 157zm318 171q0 6-5 22t-23 35-46 20q-35 0-67-31t-50-81q-29-79-41-164v-11q0-8-1-12 0-45 18-62t43-18q38 0 75 33t44 51q2 4 27 107t26 111z"/><path id="b" stroke-width="1" d="M21 287q1 6 3 16t12 38 20 47 33 37 46 17q36 0 60-18t30-34 6-21q0-2 1-2l11 11q61 64 139 64 54 0 87-27t34-79-38-157-38-127q0-26 17-26 6 0 9 1 29 5 52 38t35 80q2 8 20 8 20 0 20-8 0-1-4-15-8-29-22-57t-46-56-69-27q-47 0-68 27t-21 56q0 19 36 120t37 152q0 59-44 59h-5q-86 0-145-101l-7-12-33-134Q156 26 151 16q-13-27-43-27-13 0-21 6T76 7t-2 10q0 13 38 163t40 163q1 5 1 23 0 39-24 39-38 0-63-100-6-20-6-21-2-6-19-6H27q-6 6-6 9z"/><path id="c" stroke-width="1" d="M84 237v13l14 20h581q15-8 15-20t-15-20H98q-14 7-14 20z"/><path id="d" stroke-width="1" d="M213 578l-13-5q-14-5-40-10t-58-7H83v46h19q47 2 87 15t56 24 28 22q2 3 12 3 9 0 17-6V361l1-300q7-7 12-9t24-4 62-2h26V0h-11q-21 3-159 3-136 0-157-3H88v46h64q16 0 25 1t16 3 8 2 6 5 6 4v517z"/></defs><g fill="currentColor" stroke="currentColor" stroke-width="0"><path stroke="none" d="M120-220h2078v-60H120z"/><g transform="matrix(1 0 0 -1 632 -676)"><use xlink:href="#a"/><use x="748" y="-213" transform="scale(.707)" xlink:href="#b"/></g><g transform="matrix(1 0 0 -1 179 686)"><use xlink:href="#a"/><g transform="matrix(.707 0 0 .707 529 -150)"><use xlink:href="#b"/><use x="600" xlink:href="#c"/><use x="1379" xlink:href="#d"/></g></g></g></svg></h2>
+            <h2 style="margin-bottom: 1rem;">q = qⁿ/qᵐ = qⁿ⁻ᵐ</h2>
+            <!-- 等比中项 -->
+            <h6>等比中项</h6>
+            <h2>aₙ² = aₙ₊₁ * aₙ₋₁</h2>
+            <h2>若a, G, b 成等比例，则G² = ab;即G = ±√ab</h2> <!-- 根号 按住 Alt + 数字键 41420 -->
+            <h3 style="margin-bottom: 1rem;">注意：同号的两个数才有等比中项，并且它们的等比中项有两个（两个等比中项互为相反数）</h3>
+            <!-- 前几项和 -->
+            <h6>前几项和</h6>
+            <h2><s>若 q ≠ 1 : </s> Sₙ = a₁(1 - qⁿ) / (1-q)</h2>
+            <h2><del>同求和</del></h2>
+            <h2><s>若 q = 1 : </s> Sₙ = na₁</h2>
+            <h2><del>当 公比 = 1：和 = 项数 * 首项</del></h2>
+            <!-- 项数 -->
+            <!-- <h6>项数</h6> -->
+            <!-- 末项 -->
+            <!-- <h6>末项</h6> -->
+            <!-- 首项 -->
+            <!-- <h6>首项</h6> -->
+        </div>
+    </div>
+    <!-- 
+    高考的范围不出超出这些公式的^_^
+
+    等比数列：
+    通项公式：an=a1q^（n-1）；
+    求和公式1：Sn=a1（1-q^n）/（1-q）（q≠1）；
+    求和公式2：Sn=（a1-anq）/（1-q）（q≠1）；
+    中间公式：如果m+n=2k；m，n，k∈N；则对于等比数列有：（ak）²=am*an；
+    相等公式：如果m+n=p+q；m，n，p，q∈N，则对于等差数列：am*an=ap*aq；
+
+    等差数列：
+    通项公式：an=a1+（n-1）d；
+    求和公式1：Sn=a1n +n（n-1）d/2；
+    求和公式2：Sn=n（a1+an）/2；
+    中间公式：如果m+n=2k；m，n，k∈N；则对于等差数列有：2ak=am+an；
+    相等公式：如果m+n=p+q；m，n，p，q∈N，则对于等差数列：am+an=ap+aq；
+
+
+    解题时常用：
+    n=1时，a1=s1=？
+    n≥2时，an=Sn-S（n-1）=？
+    遇到无法求解通项公式时，想办法讲所给已知条件化成等比数列或者等差数列；还有利用所求出的前几项（比如求出了a1，a2，a3），猜想数列的通项公式，
+    然后利用数学归纳法去证明；数学归纳法的步骤是：第一步，当n=1时，成立；第二步，假设n=k时成立，证明n=k+1时也成立；
+    137 评论(7) 分享 举报
+-->
+    <!-- 
+    公差d=(an-a1)÷（n-1）（其中n大于或等于2，n属于正整数）；
+
+    项数=（末项-首项）÷公差+1；
+
+    末项=首项+（项数-1）×公差；
+
+    前n项的和Sn=首项×n+项数(项数-1）公差/2；
+
+    第n项的值an=首项+（项数-1）×公差；
+
+    等差数列中项公式2an+1=an+an+2其中{an}是等差数列；
+
+    等差数列的和=（首项+末项）×项数÷2；
+
+    an=am+(n-m)d ，若已知某一项am，可列出与d有关的式子求解an；
+
+    例如 a10=a4+6d或者a3=a7-4d；
+
+    当数列为奇数项时，前n项的和=中间项×项数；
+
+    数列为偶数项，前n项的和=（首尾项相加×项数）÷2。
+
+    当n为偶数时，等差中项为中间两项，这两项的和等于首尾两项和，等于二倍的总和除以项数n，
+    中项法求和分为两种情况，一是数列为奇数项时：Sₙ=中间一项×项数，另一种情况是数列为偶数项时：Sₙ=中间两项和×项数的一半。
+
+    
+    等比数列项数公式：An=A1*q^（n－1）；等差数列项数公式：an=a1+(n-1)*d。
+
+    一、等差数列公式
+
+    1、举例等差数列：1、3、5、7、9；
+
+    2、首项：1；末项：9；公差：2；
+
+    3、等差数列求和：（首项+末项）*项数/2；
+
+    4、求项数：（末项-首项）/公差+1；
+
+    5、求首项：末项-公差*（项数-1）；
+
+    6、求末项：首项+公差*（项数-1）；
+
+    7、求公差：（末项-首项）/（项数-1）。
+
+    二、等比数列公式
+
+    1、等比数列的通项公式是：An=A1*q^（n－1）；
+
+    2、若通项公式变形为an=a1/q*q^n(n∈N*),当q＞0时，则可把an看作自变量n的函数，点(n,an)是曲线y=a1/q*q^x上的一群孤立的点；
+
+    3、n－1＝（an/a1）开n次根号；
+
+    4、n＝（an/a1）开n次根号+1。
+-->
+    <script src="http://res1433223.net3v.net/HTML/notes/main/Math/html/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+
+
+        disBlock(o1, box1, box2);
+        disBlock(o2, box2, box1);
+
+    </script>
+</body>
+
+</html>

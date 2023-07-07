@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排列与组合</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 48px;
+        }
+
+        body {
+            background-color: #ddd;
+        }
+
+        ::selection {
+            /* color: initial;
+            background-color: #e848936c; */
+            color: rgba(89, 0, 255, 0.72);
+            background-color: rgb(255, 176, 242);
+            text-shadow: none;
+        }
+
+        ::-moz-selection {
+            color: rgba(89, 0, 255, 0.72);
+            background-color: rgb(255, 176, 242);
+            text-shadow: none !important;
+        }
+
+        li a {
+            color: #000;
+            text-decoration: none;
+            color: #666 !important;
+            font: 800 1.5/1.2rem "microsoft YaHei" !important;
+            box-shadow: 0px 1px 0.2rem 6px rgba(160, 7, 7, 0);
+            font-weight: 600 !important;
+            font-size: 2.4rem !important;
+            background-color: #ccc;
+            transition: all 0.4s;
+        }
+
+
+        a:hover {
+            color: #000 !important;
+            box-shadow: 0px 1px 1.2rem 6px rgba(160, 7, 7, .98);
+            letter-spacing: 1rem;
+            background-color: rgba(36, 24, 24, 1) !important;
+            color: #fff !important;
+        }
+
+        a:active {
+            color: #000;
+            background-color: #fff;
+        }
+
+        a:visited {
+            color: #000;
+            background-color: initial !important;
+        }
+
+        html {
+            font-size: 32px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        li a {
+            position: relative;
+            display: block;
+        }
+
+        h1 {
+            font: 800 1.5/0.4rem SimHei, "microsoft YaHei";
+        }
+
+        h2 {
+            font: 800 1.5/0.28rem SimHei, "microsoft YaHei";
+            color: rgb(223, 24, 24);
+        }
+
+        h3 {
+            font: 800 1.5/0.3rem SimHei, "microsoft YaHei";
+            color: rgb(80, 33, 140);
+            color: rgb(36, 18, 240);
+        }
+
+        h4 {
+            font: 800 1.5/0.24rem SimHei, "microsoft YaHei";
+            color: black;
+        }
+
+        div {
+            margin: 0.3rem auto;
+            border: 0.1rem solid rgba(86, 45, 161, 0.72);
+        }
+
+        #cont {
+            width: 100%;
+            background-color: #fff;
+            margin: 1.2rem auto;
+
+        }
+
+        img {
+            position: relative;
+            width: 40% !important;
+        }
+
+        h5 {
+            color: aqua;
+            color: rgb(130, 215, 208);
+        }
+
+        s,
+        del {
+            text-decoration: none;
+        }
+
+        s {
+            color: rgb(80, 33, 140);
+        }
+
+        del {
+            color: rgb(151, 19, 19);
+            color: black;
+        }
+
+        h6 {
+            padding-left: 10%;
+            font: 800 2rem "microsoft YaHei";
+            color: tomato;
+            background-color: #fff;
+        }
+
+        i {
+            position: relative;
+            top: -0.3rem;
+            color: rgb(250, 179, 99);
+            font: 800 1.4rem "microsoft YaHei";
+            font-style: italic;
+        }
+
+        .normal {
+            color: initial !important;
+            letter-spacing: normal !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            text-decoration: none !important;
+            user-select: none !important;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .normal:hover {
+            color: initial !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        img {
+            user-select: none !important;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">排列与组合</h1>
+        <ul id="cont">
+            <li><a href="javascript:;" id="option1">1.排列</a></li>
+            <li><a href="javascript:;" id="option2">2.组合</a></li>
+        </ul>
+        <div id="box1">
+            <h1 style="text-align: center">排列</h1>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">组合</h1>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                document.documentElement.style.fontSize = '12px';
+            } else if (bIsIpad) {
+                document.documentElement.style.fontSize = '16px';
+            } else {
+                document.documentElement.style.fontSize = '32px';
+            }
+        }());
+        var o1 = document.getElementById('option1');
+        var box1 = document.getElementById("box1");
+        var o2 = document.getElementById('option2');
+        var box2 = document.getElementById("box2");
+
+        function disBlock(objBtn, objBlock, objNone01, objNone02) {
+            objBtn.addEventListener("click", function () {
+                objBlock.style.display = 'block';
+                objNone01.style.display = 'none';
+                objNone02.style.display = 'none';
+            })
+        };
+
+        disBlock(o1, box1, box2);
+        disBlock(o2, box2, box1);
+
+        var cont = document.getElementById('cont');
+        (function () {
+            var lis = cont.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function () {
+                    this.style.zIndex = '99';
+                })
+                lis[i].addEventListener('mouseleave', function () {
+                    this.style.zIndex = '1';
+                })
+            }
+        }());
+    </script>
+</body>
+
+</html>

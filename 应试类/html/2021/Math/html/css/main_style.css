@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 48px;
+}
+
+body {
+    background-color: #ddd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li a,
+img,
+ins,
+u,
+i {
+    position: relative;
+}
+
+::selection {
+    /* color: initial;
+        background-color: #e848936c; */
+    color: rgb(0, 46, 65);
+    background-color: rgb(252, 218, 246);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    color: rgb(0, 46, 65);
+    background-color: rgb(252, 218, 246);
+    text-shadow: none !important;
+}
+
+li a {
+    white-space: nowrap;
+    color: #000;
+    text-decoration: none;
+    color: #666;
+    font: 800 1.2rem "microsoft YaHei";
+    box-shadow: 0px 1px 0.2rem 6px rgba(160, 7, 7, 0);
+    font-weight: 600;
+    font-size: 2.4rem;
+    background-color: #ccc;
+    letter-spacing: 0.2rem;
+    transition: all 0.4s;
+}
+
+/* 
+a:hover {
+    color: #000;
+    box-shadow: 0px 1px 1.2rem 6px rgba(160, 7, 7, .98);
+    letter-spacing: 1rem;
+    background-color: rgba(36, 24, 24, 1) !important;
+    color: #fff;
+} */
+
+a:hover {
+    color: #000;
+    box-shadow: 0px 1px 1.2rem 6px rgba(158, 204, 223, 0.98);
+    letter-spacing: 1rem;
+    background-color: rgb(105, 235, 240) !important;
+    color: #fff;
+    text-indent: 2rem;
+}
+
+a:active {
+    color: #000;
+    background-color: #fff;
+}
+
+a:visited {
+    color: #000;
+    background-color: initial;
+}
+
+#link:hover,
+#link:active,
+#link:visited {
+    color: #000;
+    text-decoration: none;
+    color: #666 !important;
+    font: 800 1.5/1.2rem "microsoft YaHei" !important;
+    box-shadow: 0px 1px 0.2rem 6px rgba(160, 7, 7, 0);
+    font-weight: 600 !important;
+    font-size: 2.4rem !important;
+    background-color: #ccc;
+}
+
+html {
+    font-size: 32px;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li a {
+    display: block;
+}
+
+h1,
+h6 {
+    cursor: default;
+}
+
+h1 {
+    font: 800 2.2rem SimHei, "microsoft YaHei";
+}
+
+h2 {
+    font: 800 1.6rem SimHei, "microsoft YaHei";
+    color: rgb(223, 24, 24);
+}
+
+h3 {
+    font: 400 1.2rem SimHei, "microsoft YaHei";
+    color: rgb(80, 33, 140);
+    color: rgb(36, 18, 240);
+}
+
+h4 {
+    font: 800 1.1rem SimHei, "microsoft YaHei";
+    color: black;
+}
+
+div {
+    margin: 0.3rem auto;
+    border: 0.1rem solid rgba(86, 45, 161, 0.72);
+}
+
+#cont {
+    width: 100%;
+    background-color: #fff;
+    margin: 1.2rem auto;
+
+}
+
+img {
+    vertical-align: middle;
+    -webkit-vertical-align: middle;
+    -moz-vertical-align: middle;
+    width: 40%;
+}
+
+.svg {
+    /* width: 20%; */
+    width: 10rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.svg:hover {
+    background-color: rgb(224, 175, 175);
+}
+
+h5 {
+    color: aqua;
+    color: rgb(130, 215, 208);
+}
+
+s,
+del {
+    text-decoration: none;
+}
+
+s {
+    color: rgb(80, 33, 140);
+}
+
+del {
+    color: rgb(151, 19, 19);
+    color: black;
+}
+
+b {
+    font-size: 1.4rem;
+    color: rgb(74, 146, 241);
+    background-color: snow;
+}
+
+h6 {
+    padding-left: 10%;
+    font: 800 2rem "microsoft YaHei";
+    color: tomato;
+    background-color: #fff;
+}
+
+ins,
+u {
+    text-decoration: none;
+}
+
+ins::after,
+u::after {
+    position: absolute;
+}
+
+ins::after {
+    /* 适用于单词向量 */
+    content: "→";
+    top: -1rem;
+    left: -0.2rem;
+    transform: scale(0.8, 0.4);
+}
+
+u::after {
+    content: "-";
+    top: -0.46rem;
+    left: 0;
+    transform: scale(1, 0.8);
+}
+
+.sp1::after {
+    /* 适用于两词向量 */
+    left: 0.1rem;
+    transform: scale(1, 0.4);
+}
+
+h1::selection {
+    color: #fff;
+    background-color: #fff;
+}
+
+h2::selection {
+    color: rgb(255, 0, 0);
+    background-color: rgb(230, 226, 248);
+    color: #fff;
+    background-color: #000;
+}
+
+h5::selection {
+    color: #ddd;
+    background-color: rgb(100, 100, 100);
+}
+
+h6::selection {
+    color: chocolate;
+    color: rgb(144, 255, 255);
+    background-color: rgb(130, 215, 208);
+}
+
+s::selection {
+    color: rgb(137, 209, 22);
+    background-color: rgb(230, 215, 240);
+}
+
+i::selection {
+    color: aquamarine;
+    background-color: aqua;
+}
+
+a::selection {
+    color: #000;
+    background-color: transparent;
+}
+
+b::selection {
+    background-color: snow;
+    color: rgb(74, 146, 241);
+}
+
+i {
+    top: 0.3rem;
+    top: 0;
+    color: rgb(250, 179, 99);
+    font: 800 1.4rem "microsoft YaHei";
+    font-style: italic;
+}
+
+.normal {
+    color: initial !important;
+    letter-spacing: normal !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    user-select: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.normal:hover {
+    color: initial !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+img {
+    user-select: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.lnk::after,.lnk2::after {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 0%;
+    height: 0.2rem;
+    border-radius: 16px;
+    background-color: rgb(255, 0, 0);
+    transition: all 0.54s;
+}
+.lnk2:hover::after,
+.lnk:hover::after {
+    width: 90%;
+    background-color: rgb(0, 255, 255);
+}
+.lnk,
+.lnk2 {
+    white-space: nowrap;
+    position: absolute;
+    cursor: pointer;
+    letter-spacing: normal;
+    top: 0.3rem;
+    transition: all 0.3s;
+}
+
+.lnk2:hover,
+.lnk:hover {
+    letter-spacing: 0.64rem;
+    color: rgb(255, 125, 85);
+}
+
+.lnk {
+    left: calc(70% - 4rem);
+}
+
+.lnk2 {
+    left: calc(70% + 4.2rem);
+}
